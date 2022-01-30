@@ -29,7 +29,8 @@
     "eject": "react-scripts eject",
     "watch": "webpack --watch",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "deploy": "gh-pages -d build",
+    "postbuild": "gzip build/static/js/*.js && gzip build/static/css/*.css"
   },
   "eslintConfig": {
     "extends": [
