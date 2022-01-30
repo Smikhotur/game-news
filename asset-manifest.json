@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.js": "/game-news/static/js/main.1a491271.js",
+    "static/js/599.3f4c5f74.chunk.js": "/game-news/static/js/599.3f4c5f74.chunk.js",
+    "static/media/creed.jpg": "/game-news/static/media/creed.1573965bd5bd41cf0fd8.jpg",
+    "static/media/DidactGothic-Regular.ttf": "/game-news/static/media/DidactGothic-Regular.37c8a8ed522192cd4de5.ttf",
+    "static/media/logo.png": "/game-news/static/media/logo.92d850d2e955719fb361.png",
+    "index.html": "/game-news/index.html",
+    "main.1a491271.js.map": "/game-news/static/js/main.1a491271.js.map",
+    "599.3f4c5f74.chunk.js.map": "/game-news/static/js/599.3f4c5f74.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/js/main.1a491271.js"
+  ]
+}
