@@ -1,5 +1,5 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Redirect, Route, Switch } from 'react-router-dom';
 import Page404 from '../components/Page404/Page404';
 import { PUBLIC_ROUTER } from './indexRouter';
 // import PrivateRoute from './PrivateRoute';
@@ -36,6 +36,7 @@ const RouterLayout = () => {
           <Route exact={true} path={'*'}>
             <Page404 />
           </Route>
+          <Redirect to="/" />
         </Switch>
       </React.Suspense>
     </>
