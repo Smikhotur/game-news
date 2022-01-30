@@ -33,9 +33,9 @@ const RouterLayout = () => {
               </PrivateRoute>
             );
           })} */}
-          <Route exact={true} path={'*'}>
+          {/* <Route exact={true} path={'*'}>
             <Page404 />
-          </Route>
+          </Route> */}
           <Redirect to="/" />
         </Switch>
       </React.Suspense>
