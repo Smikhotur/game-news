@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.js": "/game-news/static/js/main.e9529d42.chunk.js",
-    "main.js.map": "/game-news/static/js/main.e9529d42.chunk.js.map",
+    "main.js": "/game-news/static/js/main.718aa6ce.chunk.js",
+    "main.js.map": "/game-news/static/js/main.718aa6ce.chunk.js.map",
     "runtime-main.js": "/game-news/static/js/runtime-main.c0f133fc.js",
     "runtime-main.js.map": "/game-news/static/js/runtime-main.c0f133fc.js.map",
     "static/js/2.93ddf8cf.chunk.js": "/game-news/static/js/2.93ddf8cf.chunk.js",
@@ -9,7 +9,7 @@
     "static/js/3.9831c879.chunk.js": "/game-news/static/js/3.9831c879.chunk.js",
     "static/js/3.9831c879.chunk.js.map": "/game-news/static/js/3.9831c879.chunk.js.map",
     "index.html": "/game-news/index.html",
-    "precache-manifest.a9f23c3c72bfdf79e2a4dd769c227532.js": "/game-news/precache-manifest.a9f23c3c72bfdf79e2a4dd769c227532.js",
+    "precache-manifest.fc14da6d1e0149184fc197d3e555e3e6.js": "/game-news/precache-manifest.fc14da6d1e0149184fc197d3e555e3e6.js",
     "service-worker.js": "/game-news/service-worker.js",
     "static/js/2.93ddf8cf.chunk.js.LICENSE.txt": "/game-news/static/js/2.93ddf8cf.chunk.js.LICENSE.txt",
     "static/media/DidactGothic-Regular.ttf": "/game-news/static/media/DidactGothic-Regular.a9bf8ef6.ttf",
@@ -20,6 +20,6 @@
   "entrypoints": [
     "static/js/runtime-main.c0f133fc.js",
     "static/js/2.93ddf8cf.chunk.js",
-    "static/js/main.e9529d42.chunk.js"
+    "static/js/main.718aa6ce.chunk.js"
   ]
 }

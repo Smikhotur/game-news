@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "98db8d80ed625eeb07e7737cd43ac126",
+    "revision": "e142f36c5eb5a798fef06ad2ebbee165",
     "url": "/game-news/index.html"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/game-news/static/js/3.9831c879.chunk.js"
   },
   {
-    "revision": "9acb5b8e4e65c344d677",
-    "url": "/game-news/static/js/main.e9529d42.chunk.js"
+    "revision": "d8522ab10775ecb46a69",
+    "url": "/game-news/static/js/main.718aa6ce.chunk.js"
   },
   {
     "revision": "42c0aa7c0c4f47a3c65d",
