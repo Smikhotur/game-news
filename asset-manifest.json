@@ -1,15 +1,25 @@
 {
   "files": {
-    "main.js": "/game-news/static/js/main.1a491271.js",
-    "static/js/599.3f4c5f74.chunk.js": "/game-news/static/js/599.3f4c5f74.chunk.js",
-    "static/media/creed.jpg": "/game-news/static/media/creed.1573965bd5bd41cf0fd8.jpg",
-    "static/media/DidactGothic-Regular.ttf": "/game-news/static/media/DidactGothic-Regular.37c8a8ed522192cd4de5.ttf",
-    "static/media/logo.png": "/game-news/static/media/logo.92d850d2e955719fb361.png",
+    "main.js": "/game-news/static/js/main.e9529d42.chunk.js",
+    "main.js.map": "/game-news/static/js/main.e9529d42.chunk.js.map",
+    "runtime-main.js": "/game-news/static/js/runtime-main.c0f133fc.js",
+    "runtime-main.js.map": "/game-news/static/js/runtime-main.c0f133fc.js.map",
+    "static/js/2.93ddf8cf.chunk.js": "/game-news/static/js/2.93ddf8cf.chunk.js",
+    "static/js/2.93ddf8cf.chunk.js.map": "/game-news/static/js/2.93ddf8cf.chunk.js.map",
+    "static/js/3.9831c879.chunk.js": "/game-news/static/js/3.9831c879.chunk.js",
+    "static/js/3.9831c879.chunk.js.map": "/game-news/static/js/3.9831c879.chunk.js.map",
     "index.html": "/game-news/index.html",
-    "main.1a491271.js.map": "/game-news/static/js/main.1a491271.js.map",
-    "599.3f4c5f74.chunk.js.map": "/game-news/static/js/599.3f4c5f74.chunk.js.map"
+    "precache-manifest.a9f23c3c72bfdf79e2a4dd769c227532.js": "/game-news/precache-manifest.a9f23c3c72bfdf79e2a4dd769c227532.js",
+    "service-worker.js": "/game-news/service-worker.js",
+    "static/js/2.93ddf8cf.chunk.js.LICENSE.txt": "/game-news/static/js/2.93ddf8cf.chunk.js.LICENSE.txt",
+    "static/media/DidactGothic-Regular.ttf": "/game-news/static/media/DidactGothic-Regular.a9bf8ef6.ttf",
+    "static/media/background.jpg": "/game-news/static/media/background.e28586a3.jpg",
+    "static/media/creed.jpg": "/game-news/static/media/creed.e37ddc12.jpg",
+    "static/media/logo.png": "/game-news/static/media/logo.35a6b5a4.png"
   },
   "entrypoints": [
-    "static/js/main.1a491271.js"
+    "static/js/runtime-main.c0f133fc.js",
+    "static/js/2.93ddf8cf.chunk.js",
+    "static/js/main.e9529d42.chunk.js"
   ]
 }
