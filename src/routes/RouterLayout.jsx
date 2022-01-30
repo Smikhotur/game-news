@@ -1,6 +1,6 @@
 import React from 'react';
 import { Redirect, Route, Switch } from 'react-router-dom';
-import Page404 from '../components/Page404/Page404';
+// import Page404 from '../components/Page404/Page404';
 import { PUBLIC_ROUTER } from './indexRouter';
 // import PrivateRoute from './PrivateRoute';
 
