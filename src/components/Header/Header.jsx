@@ -1,10 +1,11 @@
 import React from 'react';
 import { S } from './styles';
-
+import logo from '../../assets/images/logo.png';
 const Header = () => {
   return (
     <S.Header>
-      <div>Hello</div>
+      <img src={logo} alt="" />
+      <S.TransformSkew></S.TransformSkew>
     </S.Header>
   );
 };
