@@ -1,3 +1,21 @@
 {
-  "hello": "hello"
+  "site_search": "Site search...",
+  "home": "home",
+  "pc_games": "pc games",
+  "community": "community",
+  "faq": "faq",
+  "shop": "shop",
+  "blog": "blog",
+  "contacts": "contacts",
+  "about_us": "about us",
+  "login": "login",
+  "subtitle_login": "Welcome to the gaming news site.",
+  "email_placeholder": "email address",
+  "login_placeholder": "password",
+  "btn_login": "Login Now",
+  "btn_forgot": "Forgot Your Password?",
+  "dont_have": "Dont’t Have An Account?",
+  "btn_facebook": "Sign in with Facebook",
+  "btn_google": "Sign in with Google",
+  "btn_registration": "Register Now"
 }

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import didact from '../assets/fonts/DidactGothic-Regular.ttf';
+// import { colors } from '../CONST/colors';
 
 export const GlobalStyle = createGlobalStyle`
   * {

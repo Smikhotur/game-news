@@ -1,23 +1,18 @@
 import React, { Suspense } from 'react';
-// import { useTranslation } from 'react-i18next';
-// import { LOCALE } from './CONST/keys-localeStorage';
-// import { DEFAULT_LOCALE } from './CONST/locales';
+import Header from './components/Header/Header';
 import RouterLayout from './routes/RouterLayout';
+import { S } from './styles';
 
 function App() {
-  // const { t } = useTranslation(['common']);
-  // const { i18n } = useTranslation('common');
-
-  // const lang = localStorage.getItem(LOCALE) || DEFAULT_LOCALE;
-
-  // const toSwitchLang = () => {
-  //   i18n.changeLanguage(lang === 'en' ? 'ru' : 'en');
-  //   console.log(lang);
-  // };
-
   return (
     <Suspense fallback={<span>loading...</span>}>
-      <RouterLayout />
+      <S.Wrapper>
+        <S.Container>
+          <div></div>
+          <Header />
+        </S.Container>
+        <RouterLayout />
+      </S.Wrapper>
     </Suspense>
   );
 }

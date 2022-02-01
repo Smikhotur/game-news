@@ -5,3 +5,9 @@ export const ROUTE_HOME_PAGE = {
   params: [],
   getFullUrl: formatterConcatPath,
 };
+
+export const ROUTE_LOGIN_PAGE = {
+  path: '/login',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};

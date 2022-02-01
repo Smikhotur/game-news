@@ -13,6 +13,7 @@ const RouterLayout = () => {
             if (router.hideAfterLogin) {
               return null;
             } else {
+              console.log(router);
               return (
                 <Route exact={true} path={router.path} key={key}>
                   <router.page />

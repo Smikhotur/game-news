@@ -1,3 +1,21 @@
 {
-  "hello": "Привет"
+  "site_search": "Поиск по сайту...",
+  "home": "главная",
+  "pc_games": "пк игры",
+  "community": "собщество",
+  "faq": "faq",
+  "shop": "магазин",
+  "blog": "блог",
+  "contacts": "контакты",
+  "about_us": "о нас",
+  "login": "логин",
+  "subtitle_login": "Добро пожаловать на сайт игровых новостей.",
+  "email_placeholder": "адрес электронной почты",
+  "login_placeholder": "пароль",
+  "btn_login": "Войти сейчас",
+  "btn_forgot": "Забыли Ваш пароль?",
+  "dont_have": "У вас нет учетной записи?",
+  "btn_facebook": "Войти через Facebook",
+  "btn_google": "Войти через Google",
+  "btn_registration": "Зарегистрироваться"
 }
