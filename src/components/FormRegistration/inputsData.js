@@ -8,13 +8,13 @@ export const inputsData = [
     icon: userInput,
     placeholder: 'first_name',
     type: 'text',
-    name: 'first-name',
+    name: 'firstName',
   },
   {
     icon: userInput,
     placeholder: 'last_name',
     type: 'text',
-    name: 'last-name',
+    name: 'lastName',
   },
   {
     icon: nikname,
@@ -38,6 +38,6 @@ export const inputsData = [
     icon: password,
     placeholder: 'login_retype',
     type: 'password',
-    name: 'retype-password',
+    name: 'retypePassword',
   },
 ];

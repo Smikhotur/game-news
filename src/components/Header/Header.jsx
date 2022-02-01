@@ -17,7 +17,6 @@ const Header = () => {
 
   const toSwitchLang = () => {
     i18n.changeLanguage(lang === 'en' ? 'ru' : 'en');
-    console.log(lang);
   };
 
   return (

@@ -23,5 +23,12 @@
   "first_name": "First name",
   "last_name": "Last name",
   "nikname": "nikname",
-  "checked_agreed": "I have agreed to the terms and conditions"
+  "checked_agreed": "I have agreed to the terms and conditions",
+  "confirm_password_is_required": "Confirm password is required",
+  "password_is_required": "Password is required",
+  "nikname_is_required": "Nikname is required",
+  "last_name_is_required": "Last name is required",
+  "first_name_is_required": "First name is required",
+  "email_is_required": "Email is required",
+  "passwords_must_match": "Passwords must match"
 }
