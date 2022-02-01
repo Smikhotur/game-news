@@ -2,7 +2,8 @@ import styled from 'styled-components';
 import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
 import { Link } from 'react-router-dom';
-export const S = {};
+
+const S = {};
 
 S.ContainerInner = styled.div`
   width: 100vw;
@@ -37,7 +38,7 @@ S.LoginSubTitle = styled.h4`
 S.FormsWrapper = styled.div`
   display: flex;
   justify-content: center;
-  gap: 100px
+  gap: 100px;
 `;
 
 S.DontHaveWrapper = styled.div`
@@ -45,7 +46,7 @@ S.DontHaveWrapper = styled.div`
   width: 370px;
 
   &::before {
-    content:  "or";
+    content: 'or';
     position: absolute;
     bottom: -45px;
     left: -60px;
@@ -131,3 +132,5 @@ S.ButtonGoogle = styled.button`
     width: 25px;
   }
 `;
+
+export default S;

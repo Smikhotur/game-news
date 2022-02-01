@@ -12,10 +12,16 @@
   "subtitle_login": "Добро пожаловать на сайт игровых новостей.",
   "email_placeholder": "адрес электронной почты",
   "login_placeholder": "пароль",
+  "login_retype": "Повторите пароль",
   "btn_login": "Войти сейчас",
   "btn_forgot": "Забыли Ваш пароль?",
   "dont_have": "У вас нет учетной записи?",
   "btn_facebook": "Войти через Facebook",
   "btn_google": "Войти через Google",
-  "btn_registration": "Зарегистрироваться"
+  "btn_registration": "Зарегистрироваться",
+  "registration": "Регистрация",
+  "first_name": "Имя",
+  "last_name": "Фамилия",
+  "nikname": "Псевдоним",
+  "checked_agreed": "Я согласен с условиями"
 }

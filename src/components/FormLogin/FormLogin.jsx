@@ -1,6 +1,6 @@
-import React from "react";
-import { useTranslation } from "react-i18next";
-import { S } from "./styles";
+import React from 'react';
+import { useTranslation } from 'react-i18next';
+import S from './styles';
 import email from '../../assets/images/email.png';
 import password from '../../assets/images/password.png';
 
@@ -20,7 +20,7 @@ const FormLogin = () => {
       </S.LabelLogin>
       <S.ButtonWrapper>
         <S.BtnLogin>{t('btn_login')}</S.BtnLogin>
-        <S.BtnForgot>{t('btn_forgot')}</S.BtnForgot>
+        <S.BtnForgot to="/">{t('btn_forgot')}</S.BtnForgot>
       </S.ButtonWrapper>
     </S.Form>
   );

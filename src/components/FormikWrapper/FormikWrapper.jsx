@@ -1,20 +1,14 @@
 import { Formik, useFormik } from 'formik';
 import React from 'react';
 
-const FormikWrapper = ({
-  initialValues,
-  validationSchema,
-  Component,
-  handleSubmit,
-  ...rest
-}) => {
+const FormikWrapper = ({ initialValues, validationSchema, Component, handleSubmit, ...rest }) => {
   const formik = useFormik({
     initialValues: initialValues,
     enableReinitialize: true,
     validationSchema: validationSchema,
     validateOnChange: false,
     validateOnBlur: false,
-    onSubmit: handleSubmit
+    onSubmit: handleSubmit,
   });
 
   return (

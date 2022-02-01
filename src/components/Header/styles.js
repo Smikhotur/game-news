@@ -66,7 +66,7 @@ S.InputSearch = styled.input`
   color: ${colors.white};
   border: none;
   outline: none;
-  
+
   &::placeholder {
     &:first-letter {
       text-transform: uppercase;

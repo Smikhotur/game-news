@@ -1,8 +1,8 @@
-import React from "react";
-import { NAVIGATION_LEFT, NAVIGATION_RIGHT } from "../../CONST/navigation-list";
-import { S } from "../Navigation/styles";
+import React from 'react';
+import { NAVIGATION_LEFT, NAVIGATION_RIGHT } from '../../CONST/navigation-list';
+import { S } from '../Navigation/styles';
 import logo from '../../assets/images/logo.png';
-import { useTranslation } from "react-i18next";
+import { useTranslation } from 'react-i18next';
 
 const Navigation = () => {
   const { t } = useTranslation(['common']);

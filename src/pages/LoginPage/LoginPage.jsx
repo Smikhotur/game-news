@@ -5,7 +5,8 @@ import FormLogin from '../../components/FormLogin/FormLogin';
 import { loginSchema } from '../../validations/validationLogin';
 import google from '../../assets/images/google.png';
 import face from '../../assets/images/face.png';
-import { S } from './styles';
+import S from './styles';
+import { ROUTE_REGISTRATION_PAGE } from '../../CONST/list-local-routs/list-routes-public';
 
 const LoginPage = () => {
   const { t } = useTranslation(['common']);
@@ -31,7 +32,9 @@ const LoginPage = () => {
           />
           <S.DontHaveWrapper>
             <S.TitleForm>{t('dont_have')}</S.TitleForm>
-            <S.BtnRegistration>{t('btn_registration')}</S.BtnRegistration>
+            <S.BtnRegistration to={ROUTE_REGISTRATION_PAGE.path}>
+              {t('btn_registration')}
+            </S.BtnRegistration>
           </S.DontHaveWrapper>
         </S.FormsWrapper>
       </S.WrapperLogin>

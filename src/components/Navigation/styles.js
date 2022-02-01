@@ -11,7 +11,7 @@ S.Nav = styled.nav`
   > img {
     position: absolute;
     top: 0;
-    left: calc( 50% - 125px);
+    left: calc(50% - 125px);
   }
 `;
 
@@ -20,9 +20,7 @@ S.List = styled.ul`
   gap: 20px;
 `;
 
-S.Item = styled.li`
-
-`;
+S.Item = styled.li``;
 
 S.Link = styled(Link)`
   text-decoration: none;

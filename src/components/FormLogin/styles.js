@@ -1,14 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
-// import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
-export const S = {};
+
+const S = {};
 
 S.Form = styled.form`
   position: relative;
 
   &::after {
-    content:  "";
+    content: '';
     position: absolute;
     top: 0;
     right: -50px;
@@ -35,7 +35,7 @@ S.InputEmail = styled.input`
   background: #fff;
   border: none;
   padding-left: 76px;
-  margin: 20px 0;
+  outline: none;
 
   &::placeholder {
     text-transform: capitalize;
@@ -57,13 +57,15 @@ S.InputLogin = styled.input`
 
 S.LabelEmail = styled.label`
   position: relative;
+  display: block;
+  margin: 20px 0;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: 1;
     left: 50px;
-    top: 30px;
+    top: 10px;
     height: 30px;
     width: 1px;
     background: #b7b7b7;
@@ -73,17 +75,16 @@ S.LabelEmail = styled.label`
     position: absolute;
     z-index: 1;
     width: 30px;
-    top: 30px;
+    top: 10px;
     left: 10px;
   }
 `;
-
 
 S.LabelLogin = styled.label`
   position: relative;
 
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: 1;
     left: 50px;
@@ -127,3 +128,5 @@ S.BtnForgot = styled(Link)`
   color: ${colors.white};
   text-decoration: none;
 `;
+
+export default S;

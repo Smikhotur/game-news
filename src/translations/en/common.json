@@ -12,10 +12,16 @@
   "subtitle_login": "Welcome to the gaming news site.",
   "email_placeholder": "email address",
   "login_placeholder": "password",
+  "login_retype": "Retype password",
   "btn_login": "Login Now",
   "btn_forgot": "Forgot Your Password?",
   "dont_have": "Dont’t Have An Account?",
   "btn_facebook": "Sign in with Facebook",
   "btn_google": "Sign in with Google",
-  "btn_registration": "Register Now"
+  "btn_registration": "Register Now",
+  "registration": "Registration",
+  "first_name": "First name",
+  "last_name": "Last name",
+  "nikname": "nikname",
+  "checked_agreed": "I have agreed to the terms and conditions"
 }

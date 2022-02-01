@@ -11,3 +11,9 @@ export const ROUTE_LOGIN_PAGE = {
   params: [],
   getFullUrl: formatterConcatPath,
 };
+
+export const ROUTE_REGISTRATION_PAGE = {
+  path: '/registration',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};
