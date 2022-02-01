@@ -1,24 +1,31 @@
 {
   "files": {
-    "main.js": "/game-news/static/js/main.e7550017.chunk.js",
-    "main.js.map": "/game-news/static/js/main.e7550017.chunk.js.map",
-    "runtime-main.js": "/game-news/static/js/runtime-main.46820a1a.js",
-    "runtime-main.js.map": "/game-news/static/js/runtime-main.46820a1a.js.map",
-    "static/js/2.590ae9c1.chunk.js": "/game-news/static/js/2.590ae9c1.chunk.js",
-    "static/js/2.590ae9c1.chunk.js.map": "/game-news/static/js/2.590ae9c1.chunk.js.map",
-    "static/js/3.1bb544e4.chunk.js": "/game-news/static/js/3.1bb544e4.chunk.js",
-    "static/js/3.1bb544e4.chunk.js.map": "/game-news/static/js/3.1bb544e4.chunk.js.map",
+    "main.js": "/game-news/static/js/main.6e38425e.chunk.js",
+    "main.js.map": "/game-news/static/js/main.6e38425e.chunk.js.map",
+    "runtime-main.js": "/game-news/static/js/runtime-main.db5dd5c0.js",
+    "runtime-main.js.map": "/game-news/static/js/runtime-main.db5dd5c0.js.map",
+    "static/js/2.e87e33fd.chunk.js": "/game-news/static/js/2.e87e33fd.chunk.js",
+    "static/js/2.e87e33fd.chunk.js.map": "/game-news/static/js/2.e87e33fd.chunk.js.map",
+    "static/js/3.ab0511e3.chunk.js": "/game-news/static/js/3.ab0511e3.chunk.js",
+    "static/js/3.ab0511e3.chunk.js.map": "/game-news/static/js/3.ab0511e3.chunk.js.map",
+    "static/js/4.a0dfb844.chunk.js": "/game-news/static/js/4.a0dfb844.chunk.js",
+    "static/js/4.a0dfb844.chunk.js.map": "/game-news/static/js/4.a0dfb844.chunk.js.map",
+    "static/js/5.915bade9.chunk.js": "/game-news/static/js/5.915bade9.chunk.js",
+    "static/js/5.915bade9.chunk.js.map": "/game-news/static/js/5.915bade9.chunk.js.map",
     "index.html": "/game-news/index.html",
-    "precache-manifest.a398896067dceed6b130da26837583d6.js": "/game-news/precache-manifest.a398896067dceed6b130da26837583d6.js",
+    "precache-manifest.57f3af67ac281cf1ceab84b939248578.js": "/game-news/precache-manifest.57f3af67ac281cf1ceab84b939248578.js",
     "service-worker.js": "/game-news/service-worker.js",
-    "static/js/2.590ae9c1.chunk.js.LICENSE.txt": "/game-news/static/js/2.590ae9c1.chunk.js.LICENSE.txt",
+    "static/js/3.ab0511e3.chunk.js.LICENSE.txt": "/game-news/static/js/3.ab0511e3.chunk.js.LICENSE.txt",
     "static/media/DidactGothic-Regular.ttf": "/game-news/static/media/DidactGothic-Regular.a9bf8ef6.ttf",
     "static/media/creed.jpg": "/game-news/static/media/creed.e37ddc12.jpg",
-    "static/media/logo.png": "/game-news/static/media/logo.35a6b5a4.png"
+    "static/media/logo.png": "/game-news/static/media/logo.35a6b5a4.png",
+    "static/media/search.png": "/game-news/static/media/search.f9869174.png",
+    "static/media/telegram.png": "/game-news/static/media/telegram.5261fd64.png",
+    "static/media/user.png": "/game-news/static/media/user.0a30047b.png"
   },
   "entrypoints": [
-    "static/js/runtime-main.46820a1a.js",
-    "static/js/2.590ae9c1.chunk.js",
-    "static/js/main.e7550017.chunk.js"
+    "static/js/runtime-main.db5dd5c0.js",
+    "static/js/3.ab0511e3.chunk.js",
+    "static/js/main.6e38425e.chunk.js"
   ]
 }
