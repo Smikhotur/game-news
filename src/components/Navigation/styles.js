@@ -7,12 +7,6 @@ S.Nav = styled.nav`
   display: flex;
   justify-content: space-between;
   padding: 20px 10px 0;
-
-  > img {
-    position: absolute;
-    top: 0;
-    left: calc(50% - 125px);
-  }
 `;
 
 S.List = styled.ul`
@@ -21,6 +15,12 @@ S.List = styled.ul`
 `;
 
 S.Item = styled.li``;
+
+S.LinkHome = styled(Link)`
+  position: absolute;
+  top: 0;
+  left: calc(50% - 125px);
+`;
 
 S.Link = styled(Link)`
   text-decoration: none;

@@ -3,6 +3,7 @@ import { NAVIGATION_LEFT, NAVIGATION_RIGHT } from '../../CONST/navigation-list';
 import { S } from '../Navigation/styles';
 import logo from '../../assets/images/logo.png';
 import { useTranslation } from 'react-i18next';
+import { ROUTE_HOME_PAGE } from '../../CONST/list-local-routs/list-routes-public';
 
 const Navigation = () => {
   const { t } = useTranslation(['common']);
@@ -23,7 +24,9 @@ const Navigation = () => {
           </S.Item>
         ))}
       </S.List>
-      <img src={logo} alt="" />
+      <S.LinkHome to={ROUTE_HOME_PAGE.path}>
+        <img src={logo} alt="logo site" />
+      </S.LinkHome>
     </S.Nav>
   );
 };

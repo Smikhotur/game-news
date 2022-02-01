@@ -23,5 +23,12 @@
   "first_name": "Имя",
   "last_name": "Фамилия",
   "nikname": "Псевдоним",
-  "checked_agreed": "Я согласен с условиями"
+  "checked_agreed": "Я согласен с условиями",
+  "confirm_password_is_required": "Требуется подтверждение пароля",
+  "password_is_required": "Необходим пароль",
+  "nikname_is_required": "Псевдоним обязательна",
+  "last_name_is_required": "Фамилия обязательна",
+  "first_name_is_required": "Имя обязательна",
+  "email_is_required": "E-почта обязательна",
+  "passwords_must_match": "Пароли должны совпадать"
 }

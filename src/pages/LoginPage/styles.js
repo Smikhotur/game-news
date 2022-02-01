@@ -79,7 +79,7 @@ S.BtnRegistration = styled(Link)`
   padding: 12px 30px;
   text-decoration: none;
   margin-top: 30px;
-  width: 50%;
+  width: 100%;
 `;
 
 S.LargeButtonWrapper = styled.section`
