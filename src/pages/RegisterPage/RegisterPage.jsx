@@ -4,10 +4,13 @@ import FormikWrapper from '../../components/FormikWrapper/FormikWrapper';
 import FormRegistration from '../../components/FormRegistration/FormRegistration';
 import { SignUpSchema } from '../../validations/validationSignUp';
 import { useDispatch } from 'react-redux';
-import { registration } from '../../redux-slices/auth-slice';
+import { registerUser } from '../../redux-slices/auth-slice';
+import { ROUTE_HOME_PAGE } from '../../CONST/list-local-routs/list-routes-public';
+import { useHistory } from 'react-router';
 
 const RegisterPage = () => {
   const dispatch = useDispatch();
+  const history = useHistory();
 
   const [initialValueRegistration] = useState({
     email: '',
@@ -19,8 +22,10 @@ const RegisterPage = () => {
     file: '',
   });
 
-  const handleSubmitLogin = (data) => {
-    dispatch(registration(data));
+  const handleSubmitLogin = async (data) => {
+    console.log(data);
+    const promise = await dispatch(registerUser(data));
+    promise?.payload?.token ? history.push(ROUTE_HOME_PAGE.path) : null;
   };
 
   return (

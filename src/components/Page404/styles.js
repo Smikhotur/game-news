@@ -8,6 +8,6 @@ S.Wrapper = styled.section`
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
-  height: 100vh;
+  height: 100%;
   width: 100vw;
 `;

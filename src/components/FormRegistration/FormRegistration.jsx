@@ -8,7 +8,6 @@ import ErrorMsg from '../ErrorMsg/ErrorMsg';
 
 const FormRegistration = ({ formik }) => {
   const { t } = useTranslation(['common']);
-  console.log(formik);
 
   return (
     <S.Form onSubmit={formik.handleSubmit}>
@@ -19,9 +18,10 @@ const FormRegistration = ({ formik }) => {
             type="file"
             id="file"
             onChange={(event) => {
-              const files = event.target.files;
-              let myFiles = Array.from(files);
-              formik.setFieldValue('profile', myFiles);
+              const files = event.target.files[0];
+              const data = new FormData();
+              data.append('avatar', files);
+              formik.setFieldValue('file', data);
             }}
             multiple
           />

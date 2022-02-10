@@ -81,6 +81,55 @@ S.BtnRegistrationInner = styled.div`
 
 S.LoginLink = styled(Link)``;
 
+S.Settings = styled.div`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+
+  img {
+    width: 25px;
+    cursor: pointer;
+  }
+`;
+
+S.ModalLogOut = styled.div`
+  position: absolute;
+  background: #111;
+  top: 20px;
+  left: -186px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  padding: 20px;
+  box-shadow: 9px 13px 26px -8px #333;
+  letter-spacing: 2px;
+`;
+
+S.Item = styled.div`
+  &:hover {
+    color: #e53637;
+    cursor: pointer;
+  }
+`;
+
+S.CloseModal = styled.div`
+  position: absolute;
+  background: #e53637;
+  border-radius: 50%;
+  top: -6px;
+  right: -6px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  color: #000;
+  box-shadow: 9px 13px 26px -8px #333;
+  cursor: pointer;
+`;
+
 S.SelectLanguage = styled.select`
   height: 100%;
   background: ${colors.blackBlue};

@@ -17,6 +17,7 @@ S.Card = styled.div`
   &:nth-child(2) {
     max-height: 560px;
     opacity: 0.95;
+    padding-bottom: 46px;
 
     > img {
       max-height: 560px;

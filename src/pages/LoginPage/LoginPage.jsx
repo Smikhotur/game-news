@@ -6,17 +6,28 @@ import { loginSchema } from '../../validations/validationLogin';
 import google from '../../assets/images/google.png';
 import face from '../../assets/images/face.png';
 import S from './styles';
-import { ROUTE_REGISTRATION_PAGE } from '../../CONST/list-local-routs/list-routes-public';
+import {
+  ROUTE_HOME_PAGE,
+  ROUTE_REGISTRATION_PAGE,
+} from '../../CONST/list-local-routs/list-routes-public';
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../redux-slices/auth-slice';
+import { useHistory } from 'react-router';
 
 const LoginPage = () => {
   const { t } = useTranslation(['common']);
-
+  const dispatch = useDispatch();
+  const history = useHistory();
   const [initialValueLogin] = useState({
     email: '',
     password: '',
   });
 
-  const handleSubmitLogin = () => {};
+  const handleSubmitLogin = async (data) => {
+    const promise = await dispatch(loginUser(data));
+    console.log(promise);
+    promise?.payload?.token ? history.push(ROUTE_HOME_PAGE.path) : null;
+  };
 
   return (
     <S.ContainerInner>

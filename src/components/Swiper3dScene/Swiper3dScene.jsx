@@ -1,6 +1,6 @@
 import React from 'react';
 import { S } from './styles';
-import '../../assets/styles.css';
+import '../../assets/font.css';
 import Carousel from '../Carousel/Carousel';
 
 const Swiper3dScene = () => {

@@ -30,5 +30,7 @@
   "last_name_is_required": "Last name is required",
   "first_name_is_required": "First name is required",
   "email_is_required": "Email is required",
-  "passwords_must_match": "Passwords must match"
+  "passwords_must_match": "Passwords must match",
+  "user_not_found": "user not found",
+  "enter_a_valid_email": "Wrong address or password entered"
 }

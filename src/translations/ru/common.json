@@ -30,5 +30,7 @@
   "last_name_is_required": "Фамилия обязательна",
   "first_name_is_required": "Имя обязательна",
   "email_is_required": "E-почта обязательна",
-  "passwords_must_match": "Пароли должны совпадать"
+  "passwords_must_match": "Пароли должны совпадать",
+  "user_not_found": "Пользователь не найден",
+  "enter_a_valid_email": "Введен неправильный адрес или пароль"
 }

@@ -5,6 +5,9 @@ import styled from 'styled-components';
 export const S = {};
 
 S.ArrowLeft = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 3rem;
   line-height: 1px;
   cursor: pointer;

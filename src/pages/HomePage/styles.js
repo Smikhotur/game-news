@@ -12,19 +12,24 @@ const k_light = keyframes`
   100% { opacity: 0.2; }
 `;
 
-S.ContainerInner = styled.div``;
-
-S.Main = styled.main`
-  min-height: 100%;
+S.ContainerInner = styled.div`
+  height: 100%;
 `;
 
-S.SwiperWrapper = styled.section`
+S.Main = styled.main`
+  height: 100%;
+`;
+
+S.SwiperWrapper = styled.div`
   position: relative;
   padding-bottom: 50px;
-  background: #000;
+  background: #535469;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  height: 100%;
+  min-height: 100%;
+  padding-bottom: 160px;
 
   &::before {
     content: '';

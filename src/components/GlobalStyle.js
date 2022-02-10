@@ -24,10 +24,22 @@ export const GlobalStyle = createGlobalStyle`
 
   html {
     font-family: 'Didact Gothic', sans-serif;
+    min-height: 100%;
+    height: 100%;
   }
 
   body {
-    line-height: 1;
+    min-height: 100%;
+    height: 100%;
+
+    &::-webkit-scrollbar {
+      width: 0;
+      height: 0;
+    }
+  }
+
+  div {
+    /* height: 100%; */
   }
 
   ol, ul {

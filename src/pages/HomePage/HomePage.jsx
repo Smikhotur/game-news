@@ -17,7 +17,6 @@ const HomePage = () => {
           <Swiper3dScene />
           <video ref={videoRef} src={video} autoPlay loop muted></video>
         </S.SwiperWrapper>
-        <div>dhhdhdfhdfhdfhdfh</div>
       </S.Main>
     </S.ContainerInner>
   );

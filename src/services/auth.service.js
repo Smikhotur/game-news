@@ -16,6 +16,10 @@ class dataService {
   delete(api) {
     return http.delete(api);
   }
+
+  logout = () => {
+    localStorage.removeItem('user');
+  };
 }
 
 export default new dataService();
