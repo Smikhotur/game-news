@@ -1,0 +1,1 @@
+{"version":3,"sources":["webpack://src/assets/font.css"],"names":[],"mappings":"AAAA,WAAa,uEAA2D,CAAA,yBAA4B,CAAA,eAAkB,CAAA,iBAAoB","file":"6.fccf295f.chunk.css","sourcesContent":["@font-face { src: url(\"../assets/fonts/Assassin$.ttf\") format(\"woff2\"); font-family: \"assassin-st\"; font-weight: 700; font-style: italic; }"]}
