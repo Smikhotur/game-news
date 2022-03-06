@@ -9,7 +9,6 @@ S.WrapperFooter = styled.section`
   ${container};
   color: ${colors.white};
 
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;

@@ -1,5 +1,4 @@
 import http from './http-common';
-
 class dataService {
   get(api) {
     return http.get(api);
@@ -16,10 +15,6 @@ class dataService {
   delete(api) {
     return http.delete(api);
   }
-
-  logout = () => {
-    localStorage.removeItem('user');
-  };
 }
 
 export default new dataService();

@@ -14,17 +14,6 @@ S.Card = styled.div`
   opacity: 0.45;
   transition: all 5s;
 
-  &:nth-child(2) {
-    max-height: 560px;
-    opacity: 0.95;
-    padding-bottom: 46px;
-
-    > img {
-      max-height: 560px;
-      opacity: 0.95;
-    }
-  }
-
   > img {
     max-height: 400px;
     opacity: 0.45;

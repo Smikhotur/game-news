@@ -47,7 +47,37 @@ S.InputFile = styled.input`
   position: absolute;
 `;
 
+S.CutPicture = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  > img {
+    border-radius: 50%;
+  }
+
+  > div {
+    > button {
+      color: #fff;
+      font-size: 13px;
+      background: rgba(29, 24, 43, 0.8);
+      border: none;
+      border-radius: 2px;
+      margin-top: 15px;
+      padding: 5px 25px;
+      text-transform: capitalize;
+
+      &:first-child {
+        margin-right: 10px;
+      }
+    }
+  }
+`;
+
 S.LabelForm = styled.label`
+  text-align: center;
+
   > img {
     max-width: 175px;
     cursor: pointer;

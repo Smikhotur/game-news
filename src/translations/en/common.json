@@ -32,5 +32,9 @@
   "email_is_required": "Email is required",
   "passwords_must_match": "Passwords must match",
   "user_not_found": "user not found",
-  "enter_a_valid_email": "Wrong address or password entered"
+  "enter_a_valid_email": "Wrong address or password entered",
+  "add_a_photo": "Add a photo",
+  "apply": "apply",
+  "correct": "back",
+  "select_area_with_mouse": "Select area with the mouse"
 }

@@ -30,7 +30,6 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     min-height: 100%;
-    height: 100%;
 
     &::-webkit-scrollbar {
       width: 0;

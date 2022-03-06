@@ -30,9 +30,12 @@ S.Container = styled.section`
 `;
 
 S.ContainerFooter = styled.section`
-  position: relative;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   z-index: 3;
-  background-color: rgba(29, 24, 43, 0.8);
+  /* background-color: rgba(29, 24, 43, 0.8); */
 
   > div {
     position: absolute;

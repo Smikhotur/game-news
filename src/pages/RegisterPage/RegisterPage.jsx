@@ -23,9 +23,8 @@ const RegisterPage = () => {
   });
 
   const handleSubmitLogin = async (data) => {
-    console.log(data);
     const promise = await dispatch(registerUser(data));
-    promise?.payload?.token ? history.push(ROUTE_HOME_PAGE.path) : null;
+    promise?.payload?.accessToken ? history.push(ROUTE_HOME_PAGE.path) : null;
   };
 
   return (

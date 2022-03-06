@@ -12,6 +12,7 @@ S.ContainerInner = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  padding-bottom: 185px;
 `;
 
 S.WrapperLogin = styled.section`

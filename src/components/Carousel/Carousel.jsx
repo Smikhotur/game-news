@@ -3,7 +3,7 @@ import Card from './Card/Card';
 import { initalState } from './Card/data';
 import { S } from './styles';
 
-function Carousel() {
+const Carousel = () => {
   const [cards, setCards] = useState(initalState);
 
   const handleLeftClick = () => {
@@ -56,14 +56,20 @@ function Carousel() {
         {cards
           .filter((f) => f.active === true)
           .sort((a, b) => (a.pos > b.pos ? 1 : b.pos > a.pos ? -1 : 0))
-          .map((card, index) => (
-            <Card key={index} image={card.image} name={card.name} />
-          ))}
+          .map((card, index) =>
+            index !== 1 ? (
+              <Card key={index} image={card.image} name={card.name} />
+            ) : (
+              <S.CardLink to="">
+                <Card key={index} image={card.image} name={card.name} />
+              </S.CardLink>
+            )
+          )}
       </S.CardInner>
 
       <S.ArrowLeft onClick={handleRightClick}>{'>'}</S.ArrowLeft>
     </>
   );
-}
+};
 
 export default Carousel;

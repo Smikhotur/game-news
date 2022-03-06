@@ -25,8 +25,7 @@ const LoginPage = () => {
 
   const handleSubmitLogin = async (data) => {
     const promise = await dispatch(loginUser(data));
-    console.log(promise);
-    promise?.payload?.token ? history.push(ROUTE_HOME_PAGE.path) : null;
+    promise?.payload?.accessToken ? history.push(ROUTE_HOME_PAGE.path) : null;
   };
 
   return (

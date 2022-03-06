@@ -5,11 +5,11 @@ import email from '../../assets/images/email.png';
 import password from '../../assets/images/password.png';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 import { useSelector } from 'react-redux';
-import { getMessage } from '../../selectors/selector-auth-user';
+import { getMessageSelector } from '../../selectors/selector-auth-user';
 
 const FormLogin = ({ formik }) => {
   const { t } = useTranslation(['common']);
-  const message = useSelector(getMessage);
+  const message = useSelector(getMessageSelector);
 
   return (
     <S.Form onSubmit={formik.handleSubmit}>
@@ -42,7 +42,7 @@ const FormLogin = ({ formik }) => {
         )}
       </S.LabelLogin>
       <S.ButtonWrapper>
-        <S.BtnLogin>{t('btn_login')}</S.BtnLogin>
+        <S.BtnLogin type="submit">{t('btn_login')}</S.BtnLogin>
         <S.BtnForgot to="/">{t('btn_forgot')}</S.BtnForgot>
       </S.ButtonWrapper>
     </S.Form>

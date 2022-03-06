@@ -89,16 +89,28 @@ S.Settings = styled.div`
   margin-right: 15px;
 
   img {
-    width: 25px;
+    position: absolute;
+    top: -5px;
+    right: 0;
+    width: 45px;
     cursor: pointer;
+    border-radius: 50%;
+    ${({ stylesAvatar }) => stylesAvatar};
   }
+`;
+
+S.NameUser = styled.div`
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+  margin-right: 60px;
 `;
 
 S.ModalLogOut = styled.div`
   position: absolute;
   background: #111;
   top: 20px;
-  left: -186px;
+  left: -55px;
   display: flex;
   flex-direction: column;
   gap: 15px;

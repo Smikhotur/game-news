@@ -32,5 +32,9 @@
   "email_is_required": "E-почта обязательна",
   "passwords_must_match": "Пароли должны совпадать",
   "user_not_found": "Пользователь не найден",
-  "enter_a_valid_email": "Введен неправильный адрес или пароль"
+  "enter_a_valid_email": "Введен неправильный адрес или пароль",
+  "add_a_photo": "Добавить фото",
+  "apply": "применять",
+  "correct": "назад",
+  "select_area_with_mouse": "Выдели участок мышкой"
 }

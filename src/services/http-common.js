@@ -1,8 +1,31 @@
 import axios from 'axios';
+import { API } from '../CONST/api-endpoints';
+import { getAuthUserStorage } from '../helpers/getAuthUser';
 
-export default axios.create({
-  baseURL: 'http://localhost:5000',
-  headers: {
-    'Content-type': 'application/json',
-  },
+export const API_URL = 'http://localhost:5000';
+
+const http = axios.create({
+  withCredentials: true,
+  baseURL: API_URL,
 });
+
+http.interceptors.request.use((config) => {
+  config.headers.Authorization = `Bearer ${getAuthUserStorage()}`;
+  return config;
+});
+
+http.interceptors.request.use(
+  (config) => {
+    return config;
+  },
+  async (error) => {
+    if (error.response.status == 401) {
+      const res = await axios.get(API_URL + API.refresh, {
+        withCredentials: true,
+      });
+      localStorage.setItem('user', JSON.stringify(res.data));
+    }
+  }
+);
+
+export default http;

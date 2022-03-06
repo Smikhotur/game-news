@@ -2,27 +2,32 @@ import React, { useState } from 'react';
 import { S } from './styles';
 import { socials } from '../../CONST/dataSocial';
 import search from '../../assets/images/search.png';
-import user from '../../assets/images/user.png';
+import userImage from '../../assets/images/user.png';
 import userBig from '../../assets/images/userBig.png';
 import Navigation from '../Navigation/Navigation';
 import { useTranslation } from 'react-i18next';
 import { LOCALE } from '../../CONST/keys-localeStorage';
-import { DEFAULT_LOCALE } from '../../CONST/locales';
+import { DEFAULT_LOCALE, EN, RU } from '../../CONST/locales';
 import { ROUTE_LOGIN_PAGE } from '../../CONST/list-local-routs/list-routes-public';
 import { useDispatch, useSelector } from 'react-redux';
-import { getIsAuth } from '../../selectors/selector-auth-user';
+import {
+  getIsAuthSelector,
+  getUserSelector,
+} from '../../selectors/selector-auth-user';
 import { logoutUser } from '../../redux-slices/auth-slice';
+import { stylesAvatar } from '../../CONST/mixins';
 
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
   const { t } = useTranslation(['common']);
   const { i18n } = useTranslation('common');
   const lang = localStorage.getItem(LOCALE) || DEFAULT_LOCALE;
-  const isAuth = useSelector(getIsAuth);
+  const isAuth = useSelector(getIsAuthSelector);
+  const user = useSelector(getUserSelector);
   const dispatch = useDispatch();
 
   const toSwitchLang = () => {
-    i18n.changeLanguage(lang === 'en' ? 'ru' : 'en');
+    i18n.changeLanguage(lang === EN ? RU : EN);
   };
 
   const toOpenModal = () => {
@@ -51,12 +56,16 @@ const Header = () => {
           {!isAuth ? (
             <S.LoginLink to={ROUTE_LOGIN_PAGE.path}>
               <S.BtnSocial type="button">
-                <img src={user} alt="" />
+                <img src={userImage} alt="" />
               </S.BtnSocial>
             </S.LoginLink>
           ) : (
-            <S.Settings onClick={toOpenModal}>
-              <img src={userBig} alt="" />
+            <S.Settings
+              stylesAvatar={user.user?.avatar ? '45px' : stylesAvatar}
+              onClick={toOpenModal}
+            >
+              <S.NameUser>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUser>
+              <img src={user.user?.avatar || userBig} alt="" />
               {openModal && (
                 <S.ModalLogOut>
                   <S.CloseModal onClick={toOpenModal}>X</S.CloseModal>
