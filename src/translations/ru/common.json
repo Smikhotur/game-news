@@ -36,5 +36,9 @@
   "add_a_photo": "Добавить фото",
   "apply": "применять",
   "correct": "назад",
-  "select_area_with_mouse": "Выдели участок мышкой"
+  "select_area_with_mouse": "Выдели участок мышкой",
+  "release_date": "Дата релиза",
+  "platforms": "Платформы",
+  "website": "Сайт",
+  "rating": "Рейтинг"
 }

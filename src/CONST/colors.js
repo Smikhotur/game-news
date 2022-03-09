@@ -5,4 +5,5 @@ export const colors = {
   blackBlue: 'rgba(0, 0, 0, 0.8)',
   grey: '#545469',
   greyOpacity: 'rgba(29, 24, 43, 0.8)',
+  orange: '#ee5519',
 };

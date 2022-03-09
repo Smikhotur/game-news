@@ -61,8 +61,8 @@ const Carousel = () => {
             index !== 1 ? (
               <Card key={index} image={card.image} name={card.name} />
             ) : (
-              <S.CardLink to={ROUTE_BEST_SERIES_GAME.path}>
-                <Card key={index} image={card.image} name={card.name} />
+              <S.CardLink key={index} to={ROUTE_BEST_SERIES_GAME.path}>
+                <Card image={card.image} name={card.name} />
               </S.CardLink>
             )
           )}

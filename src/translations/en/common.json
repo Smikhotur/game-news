@@ -36,5 +36,9 @@
   "add_a_photo": "Add a photo",
   "apply": "apply",
   "correct": "back",
-  "select_area_with_mouse": "Select area with the mouse"
+  "select_area_with_mouse": "Select area with the mouse",
+  "release_date": "Release date",
+  "platforms": "Platforms",
+  "website": "Website",
+  "rating": "Rating"
 }

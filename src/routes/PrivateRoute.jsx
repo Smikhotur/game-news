@@ -12,8 +12,6 @@ const PrivateRoute = ({ path, children, redirectTo, isAuth, ...rest }) => {
   const loadingStatus = true;
   const accessToken = true;
 
-  console.log('hello');
-
   const renderRouter = () => {
     if (accessToken) {
       if (loadingStatus) {
