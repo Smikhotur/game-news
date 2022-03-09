@@ -9,12 +9,14 @@ import { S } from './styles';
 
 function App() {
   const dispatch = useDispatch();
+
   useEffect(() => {
     const token = getAuthUserStorage();
     if (token) {
       dispatch(checkAuth());
     }
   }, []);
+
   return (
     <Suspense fallback={<span>Loading...</span>}>
       <S.Wrapper>

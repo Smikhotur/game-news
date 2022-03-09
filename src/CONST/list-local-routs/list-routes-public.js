@@ -17,3 +17,15 @@ export const ROUTE_REGISTRATION_PAGE = {
   params: [],
   getFullUrl: formatterConcatPath,
 };
+
+export const ROUTE_DETAILS_PAGE = {
+  path: '/details-game',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};
+
+export const ROUTE_BEST_SERIES_GAME = {
+  path: '/best-series-game',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};

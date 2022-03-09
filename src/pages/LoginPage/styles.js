@@ -8,7 +8,7 @@ const S = {};
 S.ContainerInner = styled.div`
   width: 100vw;
   height: 100%;
-  background: rgba(11, 12, 42, 70%);
+  /* background: rgba(11, 12, 42, 70%); */
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;

@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import didact from '../assets/fonts/DidactGothic-Regular.ttf';
+import { colors } from '../CONST/colors';
 // import { colors } from '../CONST/colors';
 
 export const GlobalStyle = createGlobalStyle`
@@ -30,6 +31,7 @@ export const GlobalStyle = createGlobalStyle`
 
   body {
     min-height: 100%;
+    background-color: ${colors.grey};
 
     &::-webkit-scrollbar {
       width: 0;

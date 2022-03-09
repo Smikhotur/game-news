@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { ROUTE_BEST_SERIES_GAME } from '../../CONST/list-local-routs/list-routes-public';
 import Card from './Card/Card';
 import { initalState } from './Card/data';
 import { S } from './styles';
@@ -60,7 +61,7 @@ const Carousel = () => {
             index !== 1 ? (
               <Card key={index} image={card.image} name={card.name} />
             ) : (
-              <S.CardLink to="">
+              <S.CardLink to={ROUTE_BEST_SERIES_GAME.path}>
                 <Card key={index} image={card.image} name={card.name} />
               </S.CardLink>
             )
