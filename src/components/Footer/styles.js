@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../CONST/break-point';
 import { colors } from '../../CONST/colors';
 import { container } from '../../CONST/mixins';
 
@@ -72,10 +73,18 @@ S.InnerImages = styled.div`
 S.ImageLeft = styled.img`
   position: relative;
   height: 160px;
+
+  @media ${devices.laptop} {
+    left: -100px;
+  }
 `;
 
 S.ImageRight = styled.img`
   position: relative;
   bottom: 20px;
   height: 200px;
+
+  @media ${devices.laptop} {
+    right: -130px;
+  }
 `;

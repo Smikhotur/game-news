@@ -5,8 +5,9 @@ import { getAuthUserStorage } from '../helpers/getAuthUser';
 export const API_URL = 'http://localhost:5000';
 
 const http = axios.create({
-  withCredentials: true,
   baseURL: API_URL,
+  responseType: 'json',
+  withCredentials: true,
 });
 
 http.interceptors.request.use((config) => {

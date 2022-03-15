@@ -4,8 +4,12 @@ import { ROUTE_LOGIN_PAGE } from '../CONST/list-local-routs/list-routes-public';
 import Page404 from '../components/Page404/Page404';
 import { PROTECT_ROUTER, PUBLIC_ROUTER } from './indexRouter';
 import PrivateRoute from './PrivateRoute';
+import { useSelector } from 'react-redux';
+import { getIsAuthSelector } from '../selectors/selector-auth-user';
 
 const RouterLayout = () => {
+  const isAuth = useSelector(getIsAuthSelector);
+
   return (
     <>
       <React.Suspense fallback={<span>loading...</span>}>
@@ -27,7 +31,7 @@ const RouterLayout = () => {
                 path={router.path}
                 key={key}
                 redirectTo={ROUTE_LOGIN_PAGE.path}
-                isAuth={true}
+                isAuth={isAuth}
                 loadingStatus={true}
               >
                 <router.page />

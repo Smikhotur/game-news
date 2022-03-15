@@ -1,7 +1,7 @@
 {
   "site_search": "Поиск по сайту...",
   "home": "главная",
-  "pc_games": "пк игры",
+  "pc_games": "игры",
   "community": "собщество",
   "faq": "faq",
   "shop": "магазин",
@@ -40,5 +40,7 @@
   "release_date": "Дата релиза",
   "platforms": "Платформы",
   "website": "Сайт",
-  "rating": "Рейтинг"
+  "rating": "Рейтинг",
+  "submit": "Отправить"
+
 }

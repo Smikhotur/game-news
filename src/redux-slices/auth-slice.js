@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 import { API } from '../CONST/api-endpoints';
-import { AUTH_TYPES_PREFIX } from '../CONST/types-prefix-auth/types-prefix-auth';
+import { AUTH_TYPES_PREFIX } from '../CONST/types-prefix/types-prefix-auth';
 import dataService from '../services/auth.service';
 import axios from 'axios';
 import { API_URL } from '../services/http-common';
@@ -80,14 +80,16 @@ export const checkAuth = createAsyncThunk(
 );
 
 const initialState = user
-  ? { isLoggedIn: true, user, message: '' }
-  : { isLoggedIn: false, user: null, message: '' };
+  ? { isLoggedIn: true, user, message: '', isLoading: false }
+  : { isLoggedIn: false, user: null, message: '', isLoading: false };
 
 export const AuthSlice = createSlice({
   name: 'auth',
   initialState: initialState,
   extraReducers: {
     [registerUser.fulfilled]: (state, action) => {
+      state.isLoading = false;
+
       if (action.payload?.accessToken) {
         state.isLoggedIn = true;
         state.user = action.payload;
@@ -96,10 +98,16 @@ export const AuthSlice = createSlice({
         state.message = action.payload;
       }
     },
+    [registerUser.pending.type]: (state) => {
+      state.isLoading = true;
+    },
     [registerUser.rejected]: (state) => {
+      state.isLoading = false;
       state.isLoggedIn = false;
     },
     [loginUser.fulfilled]: (state, action) => {
+      state.isLoading = false;
+
       if (action.payload?.accessToken) {
         state.isLoggedIn = true;
         state.user = action.payload;
@@ -108,13 +116,21 @@ export const AuthSlice = createSlice({
         state.message = action.payload;
       }
     },
+    [loginUser.pending.type]: (state) => {
+      state.isLoading = true;
+    },
     [loginUser.rejected]: (state) => {
+      state.isLoading = false;
       state.isLoggedIn = false;
       state.user = null;
     },
     [logoutUser.fulfilled]: (state) => {
+      state.isLoading = false;
       state.isLoggedIn = false;
       state.user = null;
+    },
+    [logoutUser.pending.type]: (state) => {
+      state.isLoading = true;
     },
   },
 });

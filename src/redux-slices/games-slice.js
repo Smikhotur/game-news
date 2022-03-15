@@ -1,0 +1,31 @@
+import { createSlice } from '@reduxjs/toolkit';
+
+export const gamesSlice = createSlice({
+  name: 'games',
+  initialState: {
+    bestSeriesGames: [],
+    bestSeriesGamesIsLoading: false,
+    bestSeriesGamesError: {},
+  },
+  reducers: {
+    setBestSeriesGames: (state, action) => {
+      state.bestSeriesGames = action.payload;
+      state.bestSeriesGamesIsLoading = false;
+    },
+    setBestSeriesGamesFetching: (state) => {
+      console.log('hello from fetching');
+      state.bestSeriesGamesIsLoading = true;
+    },
+    setBestSeriesGamesFetchingError: (state, action) => {
+      state.bestSeriesGamesIsLoading = false;
+      state.bestSeriesGamesError = action.payload;
+    },
+  },
+});
+
+export const {
+  setBestSeriesGames,
+  setBestSeriesGamesFetching,
+  setBestSeriesGamesFetchingError,
+} = gamesSlice.actions;
+export default gamesSlice.reducer;

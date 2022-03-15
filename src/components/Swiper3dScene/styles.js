@@ -3,6 +3,7 @@ import { keyframes } from 'styled-components';
 import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
 import glow from '../../assets/images/glow.png';
+import { devices } from '../../CONST/break-point';
 
 export const S = {};
 
@@ -57,4 +58,8 @@ S.SwiperCarusel = styled.div`
   align-items: center;
   gap: 20px;
   height: 560px;
+
+  @media ${devices.tabletL} {
+    max-height: 350px;
+  }
 `;

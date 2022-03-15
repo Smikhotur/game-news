@@ -85,6 +85,12 @@ S.LabelForm = styled.label`
 `;
 
 S.ButtonSubmit = styled.button`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width: 147px;
+  min-height: 41px;
   color: ${colors.white};
   font-size: 13px;
   background: #e53637;
@@ -98,6 +104,10 @@ S.ButtonSubmit = styled.button`
   text-transform: uppercase;
   padding: 12px 30px;
   margin: 30px;
+`;
+
+S.InnerSpinner = styled.div`
+  position: absolute;
 `;
 
 export default S;

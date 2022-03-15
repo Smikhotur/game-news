@@ -4,6 +4,7 @@ import { S } from '../Navigation/styles';
 import logo from '../../assets/images/logo.png';
 import { useTranslation } from 'react-i18next';
 import { ROUTE_HOME_PAGE } from '../../CONST/list-local-routs/list-routes-public';
+import search from '../../assets/images/search.png';
 
 const Navigation = () => {
   const { t } = useTranslation(['common']);
@@ -26,6 +27,10 @@ const Navigation = () => {
       </S.List>
       <S.LinkHome to={ROUTE_HOME_PAGE.path}>
         <img src={logo} alt="logo site" />
+        <div>
+          <img src={search} alt="search" />
+          <input type="text" placeholder={t('site_search')} />
+        </div>
       </S.LinkHome>
     </S.Nav>
   );

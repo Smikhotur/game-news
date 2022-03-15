@@ -20,10 +20,16 @@ S.CardInner = styled.div`
   gap: 20px;
 `;
 
+S.InnerOval = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 380px);
+`;
+
 S.Card = styled.div`
   width: 100%;
   max-width: 315px;
-  height: 400px;
   border-radius: 15px;
   background: ${colors.greyOpacity};
   cursor: pointer;

@@ -5,9 +5,14 @@ import email from '../../assets/images/email.png';
 import password from '../../assets/images/password.png';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 import { useSelector } from 'react-redux';
-import { getMessageSelector } from '../../selectors/selector-auth-user';
+import {
+  getIsLoadingSelector,
+  getMessageSelector,
+} from '../../selectors/selector-auth-user';
+import { BallTriangle } from 'react-loader-spinner';
 
 const FormLogin = ({ formik }) => {
+  const isLoading = useSelector(getIsLoadingSelector);
   const { t } = useTranslation(['common']);
   const message = useSelector(getMessageSelector);
 
@@ -42,7 +47,15 @@ const FormLogin = ({ formik }) => {
         )}
       </S.LabelLogin>
       <S.ButtonWrapper>
-        <S.BtnLogin type="submit">{t('btn_login')}</S.BtnLogin>
+        <S.BtnLogin type="submit">
+          {isLoading ? (
+            <S.InnerSpinner>
+              <BallTriangle color="#211d2e" height={30} width={30} />
+            </S.InnerSpinner>
+          ) : (
+            t('btn_login')
+          )}
+        </S.BtnLogin>
         <S.BtnForgot to="/">{t('btn_forgot')}</S.BtnForgot>
       </S.ButtonWrapper>
     </S.Form>

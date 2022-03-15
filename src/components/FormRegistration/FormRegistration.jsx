@@ -6,12 +6,16 @@ import { inputsData } from './inputsData';
 import { useTranslation } from 'react-i18next';
 import ErrorMsg from '../ErrorMsg/ErrorMsg';
 import ReactCropComponent from '../ReactCropComponent/ReactCropComponent';
+import { getIsLoadingSelector } from '../../selectors/selector-auth-user';
+import { useSelector } from 'react-redux';
+import { BallTriangle } from 'react-loader-spinner';
 
 const FormRegistration = ({ formik }) => {
   const { t } = useTranslation(['common']);
   const [file, setSelectFile] = useState(null);
   const [base64Image, setBase64Image] = useState(null);
   const [visibleButtons, setVisibleButtons] = useState(true);
+  const isLoading = useSelector(getIsLoadingSelector);
 
   const handleFileChange = (img) => {
     setSelectFile(URL.createObjectURL(img));
@@ -92,7 +96,15 @@ const FormRegistration = ({ formik }) => {
           <span>{t('checked_agreed')}</span>
         </S.InputBox>
       </S.InputInner>
-      <S.ButtonSubmit type="submit">Submit</S.ButtonSubmit>
+      <S.ButtonSubmit type="submit">
+        {isLoading ? (
+          <S.InnerSpinner>
+            <BallTriangle color="#211d2e" height={30} width={30} />
+          </S.InnerSpinner>
+        ) : (
+          t('submit')
+        )}
+      </S.ButtonSubmit>
     </S.Form>
   );
 };

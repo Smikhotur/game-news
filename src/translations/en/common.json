@@ -1,7 +1,7 @@
 {
   "site_search": "Site search...",
   "home": "home",
-  "pc_games": "pc games",
+  "pc_games": "games",
   "community": "community",
   "faq": "faq",
   "shop": "shop",
@@ -40,5 +40,6 @@
   "release_date": "Release date",
   "platforms": "Platforms",
   "website": "Website",
-  "rating": "Rating"
+  "rating": "Rating",
+  "submit": "Send"
 }

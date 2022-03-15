@@ -5,6 +5,7 @@ export const S = {};
 
 S.BoxCard = styled.div`
   text-align: center;
+  height: 100%;
 
   > img {
     border-top-left-radius: 15px;
@@ -13,6 +14,14 @@ S.BoxCard = styled.div`
     width: 100%;
     max-width: 315px;
   }
+`;
+
+S.WrapperInfo = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: calc(100% - 180px);
+  padding: 0 15px 15px 15px;
 
   > a {
     color: ${colors.white};

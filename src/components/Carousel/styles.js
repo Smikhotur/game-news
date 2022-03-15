@@ -1,11 +1,14 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { devices } from '../../CONST/break-point';
 // import { keyframes } from 'styled-components';
 import { colors } from '../../CONST/colors';
 
 export const S = {};
 
 S.ArrowLeft = styled.div`
+  position: relative;
+  top: -66px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -35,6 +38,14 @@ S.CardLink = styled(Link)`
       max-height: 560px;
       opacity: 0.95;
       cursor: pointer;
+
+      @media ${devices.tabletL} {
+        max-height: 300px;
+      }
+    }
+
+    @media ${devices.tabletL} {
+      max-height: 350px;
     }
   }
 

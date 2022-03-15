@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../../CONST/break-point';
 // import { colors } from '../../CONST/colors';
 
 export const S = {};
@@ -17,6 +18,10 @@ S.Card = styled.div`
   > img {
     max-height: 400px;
     opacity: 0.45;
+
+    @media ${devices.tabletL} {
+      max-height: 200px;
+    }
   }
 
   > h3 {

@@ -9,3 +9,7 @@ export const getUserSelector = (state) => {
 export const getMessageSelector = (state) => {
   return state.auth.message;
 };
+
+export const getIsLoadingSelector = (state) => {
+  return state.auth.isLoading;
+};

@@ -1,7 +1,19 @@
 import http from './http-common';
+import axios from 'axios';
 class dataService {
-  get(api) {
-    return http.get(api);
+  get(api, signal = {}, options = {}) {
+    let source = null;
+    let configForMethod = options;
+
+    if (signal.constructor.name === 'AbortSignal') {
+      source = axios.CancelToken.source();
+      signal.addEventListener('abort', () => {
+        source.cancel();
+      });
+      configForMethod.cancelToken = source.token;
+    }
+    console.log(api, configForMethod);
+    return http.get(api, configForMethod);
   }
 
   post(api, data) {

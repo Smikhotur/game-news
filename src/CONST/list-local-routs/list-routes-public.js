@@ -26,6 +26,6 @@ export const ROUTE_DETAILS_PAGE = {
 
 export const ROUTE_BEST_SERIES_GAME = {
   path: '/best-series-game',
-  params: [],
+  params: ['nameGame'],
   getFullUrl: formatterConcatPath,
 };

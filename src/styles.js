@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from './CONST/break-point';
 export const S = {};
 
 S.Wrapper = styled.div`
@@ -7,6 +8,7 @@ S.Wrapper = styled.div`
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
+
   > div {
     min-height: 100%;
   }
@@ -26,6 +28,10 @@ S.Container = styled.section`
     background-color: rgba(29, 24, 43, 0.8);
     width: 100%;
     height: 130px;
+
+    @media ${devices.mobileXL} {
+      height: 113px;
+    }
   }
 `;
 

@@ -21,14 +21,19 @@ S.Main = styled.main`
 `;
 
 S.SwiperWrapper = styled.div`
+  display: flex;
+  align-items: center;
   position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
   padding-bottom: 50px;
   background: #535469;
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   height: 100%;
-  min-height: 100%;
+  min-height: 100vh;
   padding-bottom: 160px;
 
   &::before {

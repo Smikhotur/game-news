@@ -52,7 +52,7 @@ const Carousel = () => {
 
   return (
     <>
-      <S.ArrowLeft onClick={handleLeftClick}>{'<'}</S.ArrowLeft>
+      <S.ArrowLeft onClick={handleRightClick}>{'<'}</S.ArrowLeft>
       <S.CardInner>
         {cards
           .filter((f) => f.active === true)
@@ -61,14 +61,17 @@ const Carousel = () => {
             index !== 1 ? (
               <Card key={index} image={card.image} name={card.name} />
             ) : (
-              <S.CardLink key={index} to={ROUTE_BEST_SERIES_GAME.path}>
+              <S.CardLink
+                key={index}
+                to={`${ROUTE_BEST_SERIES_GAME.path}/${card.name}`}
+              >
                 <Card image={card.image} name={card.name} />
               </S.CardLink>
             )
           )}
       </S.CardInner>
 
-      <S.ArrowLeft onClick={handleRightClick}>{'>'}</S.ArrowLeft>
+      <S.ArrowLeft onClick={handleLeftClick}>{'>'}</S.ArrowLeft>
     </>
   );
 };

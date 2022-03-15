@@ -16,6 +16,7 @@ import {
 } from '../../selectors/selector-auth-user';
 import { logoutUser } from '../../redux-slices/auth-slice';
 import { stylesAvatar } from '../../CONST/mixins';
+import menuImg from '../../assets/images/menu.png';
 
 const Header = () => {
   const [openModal, setOpenModal] = useState(false);
@@ -41,6 +42,7 @@ const Header = () => {
   return (
     <S.Header>
       <S.BtnInner>
+        <S.BtnBurger src={menuImg} />
         <S.ButtonBox>
           {socials.map((social, key) => (
             <S.BtnSocial type="button" key={key}>
@@ -69,6 +71,7 @@ const Header = () => {
               {openModal && (
                 <S.ModalLogOut>
                   <S.CloseModal onClick={toOpenModal}>X</S.CloseModal>
+                  <S.NameUserMenu>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUserMenu>
                   <S.Item>Personal office</S.Item>
                   <S.Item>Settings</S.Item>
                   <S.Item>Notification</S.Item>

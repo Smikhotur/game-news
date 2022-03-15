@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
 import { Link } from 'react-router-dom';
+import { devices } from '../../CONST/break-point';
 export const S = {};
 
 S.Header = styled.header`
@@ -17,6 +18,18 @@ S.BtnInner = styled.div`
   justify-content: space-between;
   padding: 0 10px 20px;
   border-bottom: 1px solid rgb(29, 24, 43);
+
+  @media ${devices.mobileXL} {
+    padding: 0 10px 9px;
+  }
+`;
+
+S.BtnBurger = styled.img`
+  display: none;
+
+  @media ${devices.mobileXL} {
+    display: block;
+  }
 `;
 
 S.ButtonBox = styled.div`
@@ -29,6 +42,14 @@ S.ButtonBox = styled.div`
     right: 0;
     top: 7px;
     width: 20px;
+
+    @media ${devices.laptop} {
+      display: none;
+    }
+  }
+
+  @media ${devices.mobileXL} {
+    display: none;
   }
 `;
 
@@ -72,6 +93,10 @@ S.InputSearch = styled.input`
       text-transform: uppercase;
     }
   }
+
+  @media ${devices.laptop} {
+    display: none;
+  }
 `;
 
 S.BtnRegistrationInner = styled.div`
@@ -97,6 +122,10 @@ S.Settings = styled.div`
     border-radius: 50%;
     ${({ stylesAvatar }) => stylesAvatar};
   }
+
+  @media ${devices.mobileXL} {
+    margin-right: 0;
+  }
 `;
 
 S.NameUser = styled.div`
@@ -104,6 +133,10 @@ S.NameUser = styled.div`
   font-weight: 400;
   text-transform: capitalize;
   margin-right: 60px;
+
+  @media ${devices.laptop} {
+    display: none;
+  }
 `;
 
 S.ModalLogOut = styled.div`
@@ -117,6 +150,23 @@ S.ModalLogOut = styled.div`
   padding: 20px;
   box-shadow: 9px 13px 26px -8px #333;
   letter-spacing: 2px;
+
+  @media ${devices.laptop} {
+    z-index: 4;
+    left: -240px;
+  }
+`;
+
+S.NameUserMenu = styled.div`
+  display: none;
+  font-size: 15px;
+  font-weight: 400;
+  text-transform: capitalize;
+
+  @media ${devices.laptop} {
+    display: block;
+    color: ${colors.orange};
+  }
 `;
 
 S.Item = styled.div`
@@ -154,6 +204,10 @@ S.SelectLanguage = styled.select`
     outline: none;
     border: none;
   }
+
+  @media ${devices.mobileXL} {
+    display: none;
+  }
 `;
 
 S.TransformSkew = styled.div`
@@ -166,4 +220,8 @@ S.TransformSkew = styled.div`
   transform: rotate(180deg);
   height: 0;
   width: 100%;
+
+  @media ${devices.mobileXL} {
+    top: 113px;
+  }
 `;

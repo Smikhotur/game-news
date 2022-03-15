@@ -31,7 +31,7 @@ S.InputEmail = styled.input`
   max-width: 370px;
   width: 100%;
   font-size: 15px;
-  color: #b7b7b7;
+  color: ${colors.colorText};
   background: #fff;
   border: none;
   padding-left: 76px;
@@ -110,7 +110,15 @@ S.ButtonWrapper = styled.div`
   width: 370px;
 `;
 
+S.InnerSpinner = styled.div`
+  position: absolute;
+`;
+
 S.BtnLogin = styled.button`
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   font-size: 13px;
   color: #fff;
   background: #e53637;
@@ -120,6 +128,8 @@ S.BtnLogin = styled.button`
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 12px 30px;
+  min-width: 147px;
+  min-height: 41px;
 `;
 
 S.BtnForgot = styled(Link)`
