@@ -26,6 +26,7 @@ S.BtnInner = styled.div`
 
 S.BtnBurger = styled.img`
   display: none;
+  cursor: pointer;
 
   @media ${devices.mobileXL} {
     display: block;
@@ -169,6 +170,8 @@ S.NameUserMenu = styled.div`
   }
 `;
 
+S.Link = styled.div``;
+
 S.Item = styled.div`
   &:hover {
     color: #e53637;
@@ -223,5 +226,9 @@ S.TransformSkew = styled.div`
 
   @media ${devices.mobileXL} {
     top: 113px;
+  }
+
+  @media ${devices.mobileL} {
+    border-bottom: 10px solid rgba(29, 24, 43, 0.8);
   }
 `;

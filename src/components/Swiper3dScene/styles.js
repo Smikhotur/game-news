@@ -33,6 +33,14 @@ S.SwiperContent = styled.div`
     background-size: cover;
     animation: ${k_glow} 1.8s ease-in-out infinite;
   }
+
+  @media ${devices.mobileXL} {
+    padding: 156px 10px 0;
+  }
+
+  @media ${devices.mobileL} {
+    padding: 122px 10px 0;
+  }
 `;
 
 S.SwiperTitle = styled.h2`
@@ -48,6 +56,10 @@ S.SwiperTitle = styled.h2`
   > span {
     color: #fe1c1d;
   }
+
+  @media ${devices.mobileXL} {
+    margin-bottom: 0;
+  }
 `;
 
 S.SwiperCarusel = styled.div`
@@ -61,5 +73,9 @@ S.SwiperCarusel = styled.div`
 
   @media ${devices.tabletL} {
     max-height: 350px;
+  }
+
+  @media ${devices.mobileL} {
+    max-height: 270px;
   }
 `;

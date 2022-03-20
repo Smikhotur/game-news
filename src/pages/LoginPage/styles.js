@@ -2,6 +2,7 @@ import styled from 'styled-components';
 import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
 import { Link } from 'react-router-dom';
+import { devices } from '../../CONST/break-point';
 
 const S = {};
 
@@ -13,6 +14,14 @@ S.ContainerInner = styled.div`
   background-position: center;
   background-repeat: no-repeat;
   padding-bottom: 185px;
+
+  @media ${devices.mobileXL} {
+    padding: 0 30px 185px;
+  }
+
+  @media ${devices.mobileL} {
+    padding: 0 10px 185px;
+  }
 `;
 
 S.WrapperLogin = styled.section`
@@ -21,6 +30,14 @@ S.WrapperLogin = styled.section`
   color: ${colors.white};
   padding: 180px 10px 0;
   max-width: 1000px;
+
+  @media ${devices.mobileXL} {
+    padding: 142px 10px 0;
+  }
+
+  @media ${devices.mobileXL} {
+    padding: 142px 0 0;
+  }
 `;
 
 S.LoginTitle = styled.h3`
@@ -28,18 +45,31 @@ S.LoginTitle = styled.h3`
   text-align: center;
   font-weight: 700;
   text-transform: capitalize;
+
+  @media ${devices.mobileXL} {
+    font-size: 38px;
+  }
 `;
 
 S.LoginSubTitle = styled.h4`
   font-size: 24px;
   text-align: center;
   margin: 20px 0 50px;
+
+  @media ${devices.mobileXL} {
+    font-size: 18px;
+  }
 `;
 
 S.FormsWrapper = styled.div`
   display: flex;
   justify-content: center;
   gap: 100px;
+
+  @media ${devices.tablet} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 S.DontHaveWrapper = styled.div`
@@ -56,6 +86,18 @@ S.DontHaveWrapper = styled.div`
     font-weight: 700;
     letter-spacing: 2px;
     text-transform: uppercase;
+
+    @media ${devices.tablet} {
+      bottom: 130px;
+    }
+
+    @media ${devices.mobileXL} {
+      left: calc(50% - 81px);
+    }
+  }
+
+  @media ${devices.mobileXL} {
+    width: 100%;
   }
 `;
 
@@ -63,6 +105,10 @@ S.TitleForm = styled.h4`
   font-weight: 700;
   text-transform: capitalize;
   font-size: 22px;
+
+  @media ${devices.tabletL} {
+    font-size: 18px;
+  }
 `;
 
 S.BtnRegistration = styled(Link)`
@@ -89,6 +135,10 @@ S.LargeButtonWrapper = styled.section`
   align-items: center;
   padding-top: 100px;
   gap: 20px;
+
+  @media ${devices.mobileXL} {
+    padding-top: 50px;
+  }
 `;
 
 S.ButtonFacebook = styled.button`
@@ -109,6 +159,10 @@ S.ButtonFacebook = styled.button`
     position: absolute;
     left: 30px;
     width: 25px;
+  }
+
+  @media ${devices.mobileXL} {
+    width: 100%;
   }
 `;
 
@@ -131,6 +185,10 @@ S.ButtonGoogle = styled.button`
     position: absolute;
     left: 30px;
     width: 25px;
+  }
+
+  @media ${devices.mobileXL} {
+    width: 100%;
   }
 `;
 

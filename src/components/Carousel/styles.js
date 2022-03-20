@@ -15,6 +15,10 @@ S.ArrowLeft = styled.div`
   font-size: 3rem;
   line-height: 1px;
   cursor: pointer;
+
+  @media ${devices.mobileXL} {
+    font-size: 1.5rem;
+  }
 `;
 
 S.CardInner = styled.div`
@@ -42,6 +46,14 @@ S.CardLink = styled(Link)`
       @media ${devices.tabletL} {
         max-height: 300px;
       }
+
+      @media ${devices.mobileXL} {
+        max-height: 215px;
+      }
+
+      @media ${devices.mobileL} {
+        max-height: 160px;
+      }
     }
 
     @media ${devices.tabletL} {
@@ -54,5 +66,15 @@ S.CardLink = styled(Link)`
     font-family: assassin-st, sans-serif;
     font-size: 18px;
     letter-spacing: 4px;
+
+    @media ${devices.mobileXL} {
+      font-size: 14px;
+      margin-top: 10px;
+      letter-spacing: 3px;
+    }
+
+    @media ${devices.mobileL} {
+      font-size: 11px;
+    }
   }
 `;

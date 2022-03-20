@@ -9,3 +9,7 @@ export const getBestSeriesGamesIsLoading = (state) => {
 export const getBestSeriesGamesError = (state) => {
   return state.games.bestSeriesGamesError;
 };
+
+export const getAllGames = (state) => {
+  return state.games.allGames;
+};

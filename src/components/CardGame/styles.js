@@ -43,7 +43,7 @@ S.TitleCard = styled.h3`
 S.TextCard = styled.h4`
   margin-top: 12px;
   text-transform: uppercase;
-  color: ${colors.white};
+  color: ${colors.orange};
   text-decoration: none;
   letter-spacing: 3px;
   font-size: 10px;

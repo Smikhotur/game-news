@@ -1,7 +1,7 @@
 {
   "site_search": "Site search...",
   "home": "home",
-  "pc_games": "games",
+  "games": "games",
   "community": "community",
   "faq": "faq",
   "shop": "shop",
@@ -41,5 +41,11 @@
   "platforms": "Platforms",
   "website": "Website",
   "rating": "Rating",
-  "submit": "Send"
+  "submit": "Send",
+  "personal_office": "Personal office",
+  "settings": "Settings",
+  "notification": "Notification",
+  "your_rating": "Your rating",
+  "log_out": "Log out",
+  "genre": "Genre"
 }

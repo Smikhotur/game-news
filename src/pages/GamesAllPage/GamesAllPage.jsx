@@ -1,32 +1,33 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { useRouteMatch } from 'react-router-dom';
-import { useHistory } from 'react-router-dom';
-import CardGame from '../../components/CardGame/CardGame';
-import { ROUTE_DETAILS_PAGE } from '../../CONST/list-local-routs/list-routes-public';
+import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
 import {
-  getBestSeriesGames,
+  getAllGames,
   getBestSeriesGamesIsLoading,
 } from '../../selectors/selector-games';
-import { seriesGames } from '../../services/async-api-games';
-import { S } from './styles';
+import { allGamesAsync } from '../../services/async-api-games';
+import Style from './styles';
+import { S } from '../BestSeriesGames/styles';
 import { Oval } from 'react-loader-spinner';
-import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
+import { ROUTE_DETAILS_PAGE } from '../../CONST/list-local-routs/list-routes-public';
+import { useRouteMatch } from 'react-router-dom';
+import { CardAllGame } from '../../components/CardAllGame/CardAllGame';
+import { useHistory } from 'react-router-dom';
 
-const BestSeriesGames = () => {
+const GamesAllPage = () => {
   const [pending, setPending] = useState('');
-  const bestSeriesGames = useSelector(getBestSeriesGames);
   const isLoading = useSelector(getBestSeriesGamesIsLoading);
+  const allGames = useSelector(getAllGames);
   const dispatch = useDispatch();
-  const history = useHistory();
   const match = useRouteMatch();
+  const history = useHistory();
 
-  useEffect(() => {
+  useEffect(async () => {
     (async () => {
-      const result = await dispatch(seriesGames(match.params.nameGame));
+      const result = await dispatch(allGamesAsync());
       setPending(result.meta.requestStatus);
     })();
-  }, [match.params.nameGame]);
+  }, []);
 
   const findHref = ({ target }) => {
     if (target.href === undefined) {
@@ -34,17 +35,19 @@ const BestSeriesGames = () => {
     }
   };
 
+  console.log(pending);
+
   return (
-    <S.WrapperList>
-      <S.InnerDetails>
-        {!isLoading ? (
+    <Style.Container>
+      <Style.Wrapper>
+        {isLoading ? (
           <>
             <S.TitleSeries>{match.params.nameGame}</S.TitleSeries>
             <S.CardInner>
               {pending === HTTP_REQUEST_STATUS.FULFILLED &&
-                bestSeriesGames.map((game, index) => (
+                allGames.map((game, index) => (
                   <S.Card onClick={findHref} key={index}>
-                    <CardGame game={game} />
+                    <CardAllGame game={game} />
                   </S.Card>
                 ))}
             </S.CardInner>
@@ -54,9 +57,9 @@ const BestSeriesGames = () => {
             <Oval color="#ff1b1b" height={80} width={80} />
           </S.InnerOval>
         )}
-      </S.InnerDetails>
-    </S.WrapperList>
+      </Style.Wrapper>
+    </Style.Container>
   );
 };
 
-export default BestSeriesGames;
+export default GamesAllPage;

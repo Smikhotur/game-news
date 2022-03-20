@@ -17,8 +17,12 @@ import {
 import { logoutUser } from '../../redux-slices/auth-slice';
 import { stylesAvatar } from '../../CONST/mixins';
 import menuImg from '../../assets/images/menu.png';
+import { setBurgerMenu } from '../../redux-slices/management-ui-slice';
+import useOnOutsideClick from '../../custom-hooks/useOnOutsideClick';
+import dataModal from './dataSettings.json';
 
 const Header = () => {
+  const { innerBorderRef } = useOnOutsideClick(() => setOpenModal(!openModal));
   const [openModal, setOpenModal] = useState(false);
   const { t } = useTranslation(['common']);
   const { i18n } = useTranslation('common');
@@ -26,6 +30,10 @@ const Header = () => {
   const isAuth = useSelector(getIsAuthSelector);
   const user = useSelector(getUserSelector);
   const dispatch = useDispatch();
+
+  const openMenu = () => {
+    dispatch(setBurgerMenu());
+  };
 
   const toSwitchLang = () => {
     i18n.changeLanguage(lang === EN ? RU : EN);
@@ -39,10 +47,12 @@ const Header = () => {
     dispatch(logoutUser());
   };
 
+  console.log(lang === EN);
+
   return (
     <S.Header>
       <S.BtnInner>
-        <S.BtnBurger src={menuImg} />
+        <S.BtnBurger onClick={openMenu} src={menuImg} />
         <S.ButtonBox>
           {socials.map((social, key) => (
             <S.BtnSocial type="button" key={key}>
@@ -69,19 +79,23 @@ const Header = () => {
               <S.NameUser>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUser>
               <img src={user.user?.avatar || userBig} alt="" />
               {openModal && (
-                <S.ModalLogOut>
+                <S.ModalLogOut ref={innerBorderRef}>
                   <S.CloseModal onClick={toOpenModal}>X</S.CloseModal>
                   <S.NameUserMenu>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUserMenu>
-                  <S.Item>Personal office</S.Item>
-                  <S.Item>Settings</S.Item>
-                  <S.Item>Notification</S.Item>
-                  <S.Item>Your rating</S.Item>
-                  <S.Item onClick={onLogOut}>Log out</S.Item>
+                  {dataModal.map((link, index) => (
+                    <S.Link onClick={toOpenModal} key={index} to={link.link}>
+                      <S.Item>{t(link.item)}</S.Item>
+                    </S.Link>
+                  ))}
+                  <S.Item onClick={onLogOut}>{t('log_out')}</S.Item>
                 </S.ModalLogOut>
               )}
             </S.Settings>
           )}
-          <S.SelectLanguage onChange={toSwitchLang}>
+          <S.SelectLanguage
+            defaultValue={lang !== EN ? 'EN' : 'RU'}
+            onChange={toSwitchLang}
+          >
             <option value="RU">EN</option>
             <option value="EN">RU</option>
           </S.SelectLanguage>

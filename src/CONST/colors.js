@@ -7,4 +7,5 @@ export const colors = {
   greyOpacity: 'rgba(29, 24, 43, 0.8)',
   orange: '#ee5519',
   colorText: '#282437',
+  transparent: 'transparent',
 };

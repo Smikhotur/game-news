@@ -1,4 +1,5 @@
 import styled from 'styled-components';
+import { devices } from '../../CONST/break-point';
 import { colors } from '../../CONST/colors';
 // import { Link } from 'react-router-dom';
 
@@ -17,6 +18,11 @@ S.Form = styled.form`
   flex-direction: column;
   align-items: center;
   padding: 170px 10px 0;
+
+  @media ${devices.mobileXL} {
+    padding: 125px 10px 0;
+    margin-bottom: -85px;
+  }
 `;
 
 S.InputInner = styled.section`
@@ -24,6 +30,11 @@ S.InputInner = styled.section`
   width: 100%;
   max-width: 700px;
   gap: 15px;
+
+  @media ${devices.mobileXL} {
+    flex-direction: column;
+    align-items: center;
+  }
 `;
 
 S.InputBox = styled.div`

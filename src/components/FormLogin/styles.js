@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import styled from 'styled-components';
+import { devices } from '../../CONST/break-point';
 import { colors } from '../../CONST/colors';
 
 const S = {};
@@ -15,6 +16,21 @@ S.Form = styled.form`
     height: 250px;
     width: 1px;
     background: #0b0c2a;
+
+    @media ${devices.tablet} {
+      width: 445px;
+      height: 1px;
+      top: 293px;
+    }
+
+    @media ${devices.mobileXL} {
+      width: 142px;
+      right: calc(50% - 90px);
+    }
+  }
+
+  @media ${devices.mobileXL} {
+    width: 100%;
   }
 `;
 
@@ -22,6 +38,10 @@ S.TitleForm = styled.h4`
   font-weight: 700;
   text-transform: capitalize;
   font-size: 22px;
+
+  @media ${devices.tabletL} {
+    font-size: 18px;
+  }
 `;
 
 S.InputEmail = styled.input`
@@ -40,6 +60,10 @@ S.InputEmail = styled.input`
   &::placeholder {
     text-transform: capitalize;
   }
+
+  @media ${devices.mobileXL} {
+    min-width: 100%;
+  }
 `;
 
 S.InputLogin = styled.input`
@@ -53,6 +77,10 @@ S.InputLogin = styled.input`
   border: none;
   padding-left: 76px;
   text-transform: capitalize;
+
+  @media ${devices.mobileXL} {
+    min-width: 100%;
+  }
 `;
 
 S.LabelEmail = styled.label`
@@ -108,6 +136,10 @@ S.ButtonWrapper = styled.div`
   align-items: center;
   margin-top: 30px;
   width: 370px;
+
+  @media ${devices.mobileXL} {
+    width: 100%;
+  }
 `;
 
 S.InnerSpinner = styled.div`
@@ -130,6 +162,10 @@ S.BtnLogin = styled.button`
   padding: 12px 30px;
   min-width: 147px;
   min-height: 41px;
+
+  @media ${devices.mobileXL} {
+    font-size: 10px;
+  }
 `;
 
 S.BtnForgot = styled(Link)`
@@ -137,6 +173,10 @@ S.BtnForgot = styled(Link)`
   cursor: pointer;
   color: ${colors.white};
   text-decoration: none;
+
+  @media ${devices.mobileXL} {
+    font-size: 10px;
+  }
 `;
 
 export default S;

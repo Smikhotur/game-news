@@ -4,4 +4,5 @@ export const API = {
   logout: '/api/auth/logout',
   refresh: '/api/auth/refresh',
   bestSeriesGames: '/api/game/best-series',
+  allGames: '/api/games',
 };

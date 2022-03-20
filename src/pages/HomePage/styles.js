@@ -3,6 +3,7 @@ import { keyframes } from 'styled-components';
 // import { container } from '../../CONST/mixins';
 // import { colors } from '../../CONST/colors';
 import light from '../../assets/images/light.png';
+import { devices } from '../../CONST/break-point';
 
 export const S = {};
 
@@ -68,5 +69,9 @@ S.SwiperWrapper = styled.div`
     height: 100%;
     object-fit: cover;
     opacity: 0.5;
+  }
+
+  @media ${devices.mobileXL} {
+    padding-bottom: 29px;
   }
 `;

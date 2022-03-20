@@ -35,6 +35,10 @@ S.LinkHome = styled(Link)`
     @media ${devices.mobileXL} {
       width: 218px;
     }
+
+    @media ${devices.mobileL} {
+      width: 166px;
+    }
   }
 
   > div {
@@ -50,6 +54,10 @@ S.LinkHome = styled(Link)`
 
     @media ${devices.mobileXL} {
       padding-left: 0;
+    }
+
+    @media ${devices.mobileL} {
+      right: 24px;
     }
 
     > img {
@@ -76,12 +84,34 @@ S.LinkHome = styled(Link)`
   @media ${devices.mobileXL} {
     left: calc(50% - 108px);
   }
+
+  @media ${devices.mobileL} {
+    width: 166px;
+    left: calc(50% - 80px);
+  }
 `;
 
 S.Link = styled(Link)`
   text-decoration: none;
-  color: ${colors.white};
+  color: ${({ home, coloractive }) =>
+    coloractive
+      ? colors.orange
+      : home === 'true'
+      ? colors.orange
+      : colors.white};
   font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
+  border-bottom: 1px solid
+    ${({ home, coloractive }) =>
+      coloractive
+        ? colors.orange
+        : home === 'true'
+        ? colors.orange
+        : colors.transparent};
+
+  &:hover {
+    color: ${colors.orange};
+    border-bottom: 1px solid ${colors.orange};
+  }
 `;

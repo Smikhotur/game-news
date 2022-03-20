@@ -26,6 +26,16 @@ S.TransformSkew = styled.div`
   border-right: 50px solid transparent;
   height: 0;
   width: 100%;
+
+  @media ${devices.mobileXL} {
+    top: -18px;
+    border-bottom: 18px solid rgba(29, 24, 43, 0.8);
+  }
+
+  @media ${devices.mobileL} {
+    top: -10px;
+    border-bottom: 10px solid rgba(29, 24, 43, 0.8);
+  }
 `;
 
 S.AboutUSFooter = styled.div`
@@ -46,17 +56,31 @@ S.LinkFooter = styled.div`
   font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
+
+  @media ${devices.mobileXL} {
+    font-size: 10px;
+  }
 `;
 
 S.CooryFooter = styled.div`
   position: absolute;
   top: 80px;
-  left: calc(50% - 40px);
+  left: calc(50% - 65px);
   height: 20px;
+
+  @media ${devices.mobileXL} {
+    left: calc(50% - 38px);
+    top: 40px;
+    font-size: 10px;
+  }
 `;
 
 S.LogoImg = styled.img`
   width: 180px;
+
+  @media ${devices.mobileXL} {
+    width: 80px;
+  }
 `;
 
 S.InnerImages = styled.div`
@@ -77,6 +101,10 @@ S.ImageLeft = styled.img`
   @media ${devices.laptop} {
     left: -100px;
   }
+
+  @media ${devices.mobileXL} {
+    display: none;
+  }
 `;
 
 S.ImageRight = styled.img`
@@ -86,5 +114,9 @@ S.ImageRight = styled.img`
 
   @media ${devices.laptop} {
     right: -130px;
+  }
+
+  @media ${devices.mobileXL} {
+    display: none;
   }
 `;

@@ -41,6 +41,12 @@
   "platforms": "Платформы",
   "website": "Сайт",
   "rating": "Рейтинг",
-  "submit": "Отправить"
+  "submit": "Отправить",
+  "personal_office": "Личный кабинет",
+  "settings": "Настройки",
+  "notification": "Уведомление",
+  "your_rating": "Ваш рейтинг",
+  "log_out": "Выйти",
+  "genre": "Жанр"
 
 }
