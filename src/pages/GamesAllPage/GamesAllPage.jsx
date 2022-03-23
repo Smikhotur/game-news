@@ -13,8 +13,13 @@ import { ROUTE_DETAILS_PAGE } from '../../CONST/list-local-routs/list-routes-pub
 import { useRouteMatch } from 'react-router-dom';
 import { CardAllGame } from '../../components/CardAllGame/CardAllGame';
 import { useHistory } from 'react-router-dom';
+import { colors } from '../../CONST/colors';
+import { AMOUNT } from '../../CONST/amount';
+import { Pagination } from '../../components/Pagination/Pagination';
 
 const GamesAllPage = () => {
+  const [startShow, setStartShow] = useState(AMOUNT.CARD_START);
+  const [endShow, setEndShow] = useState(AMOUNT.CARD_END);
   const [pending, setPending] = useState('');
   const isLoading = useSelector(getBestSeriesGamesIsLoading);
   const allGames = useSelector(getAllGames);
@@ -35,26 +40,34 @@ const GamesAllPage = () => {
     }
   };
 
-  console.log(pending);
-
   return (
     <Style.Container>
       <Style.Wrapper>
-        {isLoading ? (
+        {!isLoading ? (
           <>
             <S.TitleSeries>{match.params.nameGame}</S.TitleSeries>
             <S.CardInner>
               {pending === HTTP_REQUEST_STATUS.FULFILLED &&
-                allGames.map((game, index) => (
+                allGames.slice(startShow, endShow).map((game, index) => (
                   <S.Card onClick={findHref} key={index}>
                     <CardAllGame game={game} />
                   </S.Card>
                 ))}
             </S.CardInner>
+            <Pagination
+              games={allGames}
+              setStartShow={setStartShow}
+              setEndShow={setEndShow}
+            />
           </>
         ) : (
           <S.InnerOval>
-            <Oval color="#ff1b1b" height={80} width={80} />
+            <Oval
+              secondaryColor={colors.blackBlue}
+              color={colors.orange}
+              height={80}
+              width={80}
+            />
           </S.InnerOval>
         )}
       </Style.Wrapper>

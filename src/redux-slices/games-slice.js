@@ -23,6 +23,14 @@ export const gamesSlice = createSlice({
     },
     setAllGames: (state, action) => {
       state.allGames = action.payload;
+      state.bestSeriesGamesIsLoading = false;
+    },
+    setAllGamesPending: (state) => {
+      state.bestSeriesGamesIsLoading = true;
+    },
+    settAllGamesError: (state, action) => {
+      state.bestSeriesGamesIsLoading = false;
+      state.bestSeriesGamesError = action.payload;
     },
   },
 });
@@ -32,5 +40,7 @@ export const {
   setBestSeriesGamesFetching,
   setBestSeriesGamesFetchingError,
   setAllGames,
+  setAllGamesPending,
+  settAllGamesError,
 } = gamesSlice.actions;
 export default gamesSlice.reducer;

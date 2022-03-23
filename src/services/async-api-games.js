@@ -3,9 +3,11 @@ import { API } from '../CONST/api-endpoints';
 import { GAMES_TYPES_PREFIX } from '../CONST/types-prefix/types-prefix-games';
 import {
   setAllGames,
+  setAllGamesPending,
   setBestSeriesGames,
   setBestSeriesGamesFetching,
   setBestSeriesGamesFetchingError,
+  settAllGamesError,
 } from '../redux-slices/games-slice';
 import { getGames } from './another-service';
 import service from './service';
@@ -29,12 +31,12 @@ export const allGamesAsync = createAsyncThunk(
   GAMES_TYPES_PREFIX.anotherGames,
   async (data, { dispatch }) => {
     try {
-      dispatch(setBestSeriesGamesFetching());
+      dispatch(setAllGamesPending());
       const res = await getGames(`${API.allGames}`);
       console.log(res);
       dispatch(setAllGames(res));
     } catch (e) {
-      dispatch(setBestSeriesGamesFetchingError(e));
+      dispatch(settAllGamesError(e));
       return e.response.data.message;
     }
   }

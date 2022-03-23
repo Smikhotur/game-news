@@ -12,6 +12,7 @@ import { seriesGames } from '../../services/async-api-games';
 import { S } from './styles';
 import { Oval } from 'react-loader-spinner';
 import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
+import { colors } from '../../CONST/colors';
 
 const BestSeriesGames = () => {
   const [pending, setPending] = useState('');
@@ -51,7 +52,12 @@ const BestSeriesGames = () => {
           </>
         ) : (
           <S.InnerOval>
-            <Oval color="#ff1b1b" height={80} width={80} />
+            <Oval
+              secondaryColor={colors.blackBlue}
+              color={colors.orange}
+              height={80}
+              width={80}
+            />
           </S.InnerOval>
         )}
       </S.InnerDetails>

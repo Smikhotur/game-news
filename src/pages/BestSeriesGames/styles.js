@@ -2,7 +2,6 @@ import styled from 'styled-components';
 import { container } from '../../CONST/mixins';
 import { colors } from '../../CONST/colors';
 import { devices } from '../../CONST/break-point';
-// import { Link } from 'react-router-dom';
 
 export const S = {};
 

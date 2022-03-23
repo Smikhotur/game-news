@@ -13,7 +13,7 @@ S.Container = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  padding-bottom: 185px;
+  padding-bottom: 165px;
 `;
 
 S.Wrapper = styled.section`

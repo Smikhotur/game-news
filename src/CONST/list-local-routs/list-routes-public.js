@@ -20,7 +20,7 @@ export const ROUTE_REGISTRATION_PAGE = {
 
 export const ROUTE_DETAILS_PAGE = {
   path: '/details-game',
-  params: ['id'],
+  params: [],
   getFullUrl: formatterConcatPath,
 };
 

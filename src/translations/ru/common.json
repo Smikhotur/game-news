@@ -1,7 +1,7 @@
 {
   "site_search": "Поиск по сайту...",
   "home": "главная",
-  "pc_games": "игры",
+  "games": "игры",
   "community": "собщество",
   "faq": "faq",
   "shop": "магазин",
@@ -47,6 +47,6 @@
   "notification": "Уведомление",
   "your_rating": "Ваш рейтинг",
   "log_out": "Выйти",
-  "genre": "Жанр"
-
+  "genre": "Жанр",
+  "pages": "страница из"
 }
