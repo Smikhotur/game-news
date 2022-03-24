@@ -34,9 +34,9 @@ const GamesAllPage = () => {
     })();
   }, []);
 
-  const findHref = ({ target }) => {
+  const findHref = ({ target }, id) => {
     if (target.href === undefined) {
-      history.push(ROUTE_DETAILS_PAGE.path);
+      history.push(`${ROUTE_DETAILS_PAGE.path}/${id}`);
     }
   };
 
@@ -49,7 +49,7 @@ const GamesAllPage = () => {
             <S.CardInner>
               {pending === HTTP_REQUEST_STATUS.FULFILLED &&
                 allGames.slice(startShow, endShow).map((game, index) => (
-                  <S.Card onClick={findHref} key={index}>
+                  <S.Card onClick={(e) => findHref(e, game.id)} key={index}>
                     <CardAllGame game={game} />
                   </S.Card>
                 ))}

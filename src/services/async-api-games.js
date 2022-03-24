@@ -7,6 +7,7 @@ import {
   setBestSeriesGames,
   setBestSeriesGamesFetching,
   setBestSeriesGamesFetchingError,
+  setGameDetails,
   settAllGamesError,
 } from '../redux-slices/games-slice';
 import { getGames } from './another-service';
@@ -33,8 +34,22 @@ export const allGamesAsync = createAsyncThunk(
     try {
       dispatch(setAllGamesPending());
       const res = await getGames(`${API.allGames}`);
-      console.log(res);
       dispatch(setAllGames(res));
+    } catch (e) {
+      dispatch(settAllGamesError(e));
+      return e.response.data.message;
+    }
+  }
+);
+
+export const gameDetailsAsync = createAsyncThunk(
+  GAMES_TYPES_PREFIX.gameDetails,
+  async (data, { dispatch }) => {
+    try {
+      dispatch(setAllGamesPending());
+      const res = await getGames(`${API.detailsGame}?id=${data.id}`);
+      console.log(res);
+      dispatch(setGameDetails(res));
     } catch (e) {
       dispatch(settAllGamesError(e));
       return e.response.data.message;

@@ -1,5 +1,5 @@
 export function getGames(api) {
-  return fetch('https://free-to-play-games-database.p.rapidapi.com/api/games', {
+  return fetch(`https://free-to-play-games-database.p.rapidapi.com${api}`, {
     method: 'GET',
     url: api,
     headers: {

@@ -5,4 +5,5 @@ export const API = {
   refresh: '/api/auth/refresh',
   bestSeriesGames: '/api/game/best-series',
   allGames: '/api/games',
+  detailsGame: '/api/game',
 };

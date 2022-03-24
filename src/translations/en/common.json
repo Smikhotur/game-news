@@ -48,5 +48,11 @@
   "your_rating": "Your rating",
   "log_out": "Log out",
   "genre": "Genre",
-  "pages": "page from"
+  "pages": "page from",
+  "graphics": "Graphics",
+  "memory": "Memory",
+  "os": "Operating system",
+  "processor": "Processor",
+  "storage": "Storage",
+  "system_requirements": "System requirements"
 }

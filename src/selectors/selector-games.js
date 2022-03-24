@@ -13,3 +13,7 @@ export const getBestSeriesGamesError = (state) => {
 export const getAllGames = (state) => {
   return state.games.allGames;
 };
+
+export const getGameDetails = (state) => {
+  return state.games.detailsGame;
+};
