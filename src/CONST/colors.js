@@ -8,4 +8,5 @@ export const colors = {
   orange: '#ee5519',
   colorText: '#282437',
   transparent: 'transparent',
+  yellowBright: '#FDBE2F',
 };

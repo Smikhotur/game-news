@@ -10,7 +10,8 @@ import { gameDetailsAsync } from '../../services/async-api-games';
 import { S } from './styles';
 import { Oval } from 'react-loader-spinner';
 import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
-import { useTranslation } from 'react-i18next';
+import { InfoGame } from '../../components/InfoGame/InfoGame';
+import { Comments } from '../../components/Comments/Comments';
 
 const DetailsGame = () => {
   const [pending, setPending] = useState('');
@@ -19,7 +20,6 @@ const DetailsGame = () => {
   const dispatch = useDispatch();
   const gameDetails = useSelector(getGameDetails);
   const isLoading = useSelector(getBestSeriesGamesIsLoading);
-  const { t } = useTranslation(['common']);
 
   useEffect(async () => {
     (async () => {
@@ -69,34 +69,8 @@ const DetailsGame = () => {
             </S.InnerSlide>
             <S.Title>{gameDetails?.title}</S.Title>
             <S.Subtitle>{gameDetails?.description}</S.Subtitle>
-            <S.InnerInfo>
-              <img src={gameDetails?.thumbnail} alt="" />
-              <S.Info>
-                <S.InfoBigTitle>{t('system_requirements')}:</S.InfoBigTitle>
-                <S.InfoTitle>{t('graphics')}</S.InfoTitle>
-                <S.InfoSubtitle>
-                  {gameDetails?.minimum_system_requirements.graphics}
-                </S.InfoSubtitle>
-                <S.InfoTitle>{t('memory')}</S.InfoTitle>
-                <S.InfoSubtitle>
-                  {gameDetails?.minimum_system_requirements.memory}
-                </S.InfoSubtitle>
-                <S.InfoTitle>{t('os')}</S.InfoTitle>
-                <S.InfoSubtitle>
-                  {gameDetails?.minimum_system_requirements.os}
-                </S.InfoSubtitle>
-
-                <S.InfoTitle>{t('processor')}</S.InfoTitle>
-                <S.InfoSubtitle>
-                  {gameDetails?.minimum_system_requirements.processor}
-                </S.InfoSubtitle>
-
-                <S.InfoTitle>{t('storage')}</S.InfoTitle>
-                <S.InfoSubtitle>
-                  {gameDetails?.minimum_system_requirements.storage}
-                </S.InfoSubtitle>
-              </S.Info>
-            </S.InnerInfo>
+            <InfoGame gameDetails={gameDetails} />
+            <Comments />
           </>
         ) : (
           <S.InnerOval>
