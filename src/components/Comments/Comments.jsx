@@ -1,17 +1,46 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Emoji } from '../Emoji/Emoji';
 import { S } from './styles';
-import comments from './data.json';
 import { useTranslation } from 'react-i18next';
 import emoji from '../../assets/images/emoji.png';
 import useOnOutsideClick from '../../custom-hooks/useOnOutsideClick';
+import { useDispatch, useSelector } from 'react-redux';
+import {
+  createCommentAsync,
+  getCommentAsync,
+} from '../../services/async-api-games';
+import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
+import { getCommentsSelector } from '../../selectors/selector-games';
 
-export const Comments = () => {
+export const Comments = ({ id_game }) => {
   const [openEmoji, setOpenEmoji] = useState(false);
   const [text, setText] = useState('');
   const { t } = useTranslation(['common']);
   const { innerBorderRef } = useOnOutsideClick(() => setOpenEmoji(false));
-  const handleSubmit = () => {};
+  const dispatch = useDispatch();
+  const comments = useSelector(getCommentsSelector);
+
+  useEffect(async () => {
+    (async () => {
+      await dispatch(getCommentAsync({ id_game, count: 5 }));
+    })();
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const respons = await dispatch(
+      createCommentAsync({
+        id_person: JSON.parse(localStorage.getItem('user')).user.id,
+        id_game,
+        text,
+      })
+    );
+
+    if (respons.meta.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
+      setText('');
+    }
+  };
 
   const handleChange = () => {
     setOpenEmoji(!openEmoji);
@@ -20,8 +49,6 @@ export const Comments = () => {
   const addText = ({ target: { value } }) => {
     setText(value);
   };
-
-  console.log(text);
 
   return (
     <S.WrapperComments>

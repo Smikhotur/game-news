@@ -28,7 +28,7 @@ S.FormComment = styled.form`
   margin-top: 20px;
 `;
 
-S.InnerTitle = styled.form`
+S.InnerTitle = styled.div`
   position: relative;
   display: flex;
   justify-content: space-between;
@@ -97,6 +97,7 @@ S.Avatar = styled.img`
 
 S.Comment = styled.div`
   margin-left: 30px;
+  width: 100%;
 `;
 S.CommentAutorInner = styled.div`
   position: relative;

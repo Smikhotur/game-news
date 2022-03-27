@@ -6,7 +6,10 @@ import {
   getBestSeriesGamesIsLoading,
   getGameDetails,
 } from '../../selectors/selector-games';
-import { gameDetailsAsync } from '../../services/async-api-games';
+import {
+  gameDetailsAsync,
+  seriesGameDetails,
+} from '../../services/async-api-games';
 import { S } from './styles';
 import { Oval } from 'react-loader-spinner';
 import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
@@ -16,6 +19,7 @@ import { Comments } from '../../components/Comments/Comments';
 const DetailsGame = () => {
   const [pending, setPending] = useState('');
   const [count, setCount] = useState(0);
+  const [best, setBest] = useState(false);
   const { params } = useRouteMatch();
   const dispatch = useDispatch();
   const gameDetails = useSelector(getGameDetails);
@@ -23,8 +27,14 @@ const DetailsGame = () => {
 
   useEffect(async () => {
     (async () => {
-      const result = await dispatch(gameDetailsAsync(params));
-      setPending(result.meta.requestStatus);
+      if (params.id.length > 5) {
+        setBest(true);
+        const result = await dispatch(seriesGameDetails(params.id));
+        setPending(result.meta.requestStatus);
+      } else {
+        const result = await dispatch(gameDetailsAsync(params));
+        setPending(result.meta.requestStatus);
+      }
     })();
   }, []);
 
@@ -69,8 +79,8 @@ const DetailsGame = () => {
             </S.InnerSlide>
             <S.Title>{gameDetails?.title}</S.Title>
             <S.Subtitle>{gameDetails?.description}</S.Subtitle>
-            <InfoGame gameDetails={gameDetails} />
-            <Comments />
+            <InfoGame best={best} gameDetails={gameDetails} />
+            {best && <Comments id_game={params.id} />}
           </>
         ) : (
           <S.InnerOval>

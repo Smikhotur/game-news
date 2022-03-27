@@ -6,4 +6,7 @@ export const API = {
   bestSeriesGames: '/api/game/best-series',
   allGames: '/api/games',
   detailsGame: '/api/game',
+  detailsGameSeries: '/api/game/details',
+  createComment: '/api/game/add-to-comment',
+  getComments: '/api/game/comments',
 };

@@ -17,3 +17,7 @@ export const getAllGames = (state) => {
 export const getGameDetails = (state) => {
   return state.games.detailsGame;
 };
+
+export const getCommentsSelector = (state) => {
+  return state.games.comments;
+};

@@ -11,6 +11,8 @@ S.InnerInfo = styled.div`
   padding: 30px 15px 0;
 
   > img {
+    max-width: 365px;
+
     @media ${devices.tablet} {
       width: 70%;
       margin-bottom: 20px;
@@ -18,6 +20,7 @@ S.InnerInfo = styled.div`
 
     @media ${devices.mobileXL} {
       width: 100%;
+      max-width: 100%;
     }
   }
 

@@ -12,11 +12,7 @@ export const Emoji = ({ setText, openEmoji }) => {
       {openEmoji && (
         <S.EmojiWrapper>
           {dataEmoji.map((emoji) => (
-            <span
-              onClick={() => addEmoji(emoji.emoji)}
-              handleChange
-              key={emoji.id}
-            >
+            <span onClick={() => addEmoji(emoji.emoji)} key={emoji.id}>
               {emoji.emoji}
             </span>
           ))}
