@@ -45,7 +45,7 @@
   "personal_office": "Personal office",
   "settings": "Settings",
   "notification": "Notification",
-  "your_rating": "Your rating",
+  "messenger": "Messenger",
   "log_out": "Log out",
   "genre": "Genre",
   "pages": "page from",
@@ -58,5 +58,7 @@
   "rate_game": "Leave a rating for the game",
   "comments": "Comments",
   "write_comments": "Write a comment",
-  "leave_comment": "Leave a comment"
+  "leave_comment": "Leave a comment",
+  "search": "Search...",
+  "chat": "Open a conversation to start a chat"
 }

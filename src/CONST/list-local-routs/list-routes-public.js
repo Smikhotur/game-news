@@ -47,3 +47,9 @@ export const ROUTE_SHOP_PAGE = {
   params: [],
   getFullUrl: formatterConcatPath,
 };
+
+export const ROUTE_MESSENGER = {
+  path: '/messenger',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};

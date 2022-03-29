@@ -170,7 +170,10 @@ S.NameUserMenu = styled.div`
   }
 `;
 
-S.Link = styled.div``;
+S.Link = styled(Link)`
+  color: ${colors.white};
+  text-decoration: none;
+`;
 
 S.Item = styled.div`
   &:hover {

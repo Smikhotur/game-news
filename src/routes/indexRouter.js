@@ -6,6 +6,7 @@ import {
   ROUTE_DETAILS_PAGE,
   ROUTE_HOME_PAGE,
   ROUTE_LOGIN_PAGE,
+  ROUTE_MESSENGER,
   ROUTE_REGISTRATION_PAGE,
   ROUTE_SHOP_PAGE,
 } from '../CONST/list-local-routs/list-routes-public';
@@ -29,6 +30,7 @@ const GamesAllPage = React.lazy(() =>
 
 const BlogPage = React.lazy(() => import('../pages/BlogPage/BlogPage'));
 const ShopPage = React.lazy(() => import('../pages/ShopPage/ShopPage'));
+const Messenger = React.lazy(() => import('../pages/Messenger/Messenger'));
 
 export const PUBLIC_ROUTER = [
   {
@@ -72,6 +74,11 @@ export const PROTECT_ROUTER = [
   {
     path: ROUTE_SHOP_PAGE.getFullUrl(),
     page: ShopPage,
+    hideAfterLogin: false,
+  },
+  {
+    path: ROUTE_MESSENGER.getFullUrl(),
+    page: Messenger,
     hideAfterLogin: false,
   },
 ];

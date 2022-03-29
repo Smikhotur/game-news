@@ -19,7 +19,7 @@ import { stylesAvatar } from '../../CONST/mixins';
 import menuImg from '../../assets/images/menu.png';
 import { setBurgerMenu } from '../../redux-slices/management-ui-slice';
 import useOnOutsideClick from '../../custom-hooks/useOnOutsideClick';
-import dataModal from './dataSettings.json';
+import { smallMenu } from '../../CONST/navigation-list';
 
 const Header = () => {
   const { innerBorderRef } = useOnOutsideClick(() => setOpenModal(!openModal));
@@ -46,8 +46,6 @@ const Header = () => {
   const onLogOut = () => {
     dispatch(logoutUser());
   };
-
-  console.log(lang === EN);
 
   return (
     <S.Header>
@@ -82,7 +80,7 @@ const Header = () => {
                 <S.ModalLogOut ref={innerBorderRef}>
                   <S.CloseModal onClick={toOpenModal}>X</S.CloseModal>
                   <S.NameUserMenu>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUserMenu>
-                  {dataModal.map((link, index) => (
+                  {smallMenu.map((link, index) => (
                     <S.Link onClick={toOpenModal} key={index} to={link.link}>
                       <S.Item>{t(link.item)}</S.Item>
                     </S.Link>

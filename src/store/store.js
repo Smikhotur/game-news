@@ -7,6 +7,7 @@ import GamesReducer from '../redux-slices/games-slice';
 import globalErrorSlice from '../redux-slices/global-error-slice';
 import LoadingSlice from '../redux-slices/loading-slice';
 import ManagementUiReducere from '../redux-slices/management-ui-slice';
+import MessengerReducere from '../redux-slices/messenger-slice';
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +17,7 @@ export const store = configureStore({
     globalError: globalErrorSlice,
     loading: LoadingSlice,
     management: ManagementUiReducere,
+    messenger: MessengerReducere,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(errorMiddleware, loadingMiddleware),

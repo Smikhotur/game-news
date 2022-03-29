@@ -1,0 +1,17 @@
+[
+  {"id": "1", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Hello", "autor": true, "data": "12.03.2021"},
+  {"id": "2", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "How are you?", "autor": true, "data": "12.03.2021"},
+  {"id": "3", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "Hello, I am fine and you?", "autor": false, "data": "12.03.2021"},
+  {"id": "4", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "5", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"},
+  {"id": "6", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "7", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"},
+  {"id": "8", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "9", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"},
+  {"id": "10", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "11", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"},
+  {"id": "12", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "13", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"},
+  {"id": "14", "avatar": "https://i.ibb.co/Kb7d9tV/1611843894584.jpg", "name": "Daria", "text": "Good", "autor": true, "data": "12.03.2021"},
+  {"id": "15", "avatar": "https://i.ibb.co/bHwby78/y-BD7x-NZth-Lp-Z.jpg", "name": "Roman", "text": "What will you do?", "autor": false, "data": "12.03.2021"}
+]

@@ -9,4 +9,7 @@ export const API = {
   detailsGameSeries: '/api/game/details',
   createComment: '/api/game/add-to-comment',
   getComments: '/api/game/comments',
+  conversations: '/api/conversations',
+  messages: '/api/messages',
+  users: '/api/messages/users',
 };

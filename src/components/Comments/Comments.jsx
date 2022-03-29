@@ -14,6 +14,8 @@ import { getCommentsSelector } from '../../selectors/selector-games';
 
 export const Comments = ({ id_game }) => {
   const [openEmoji, setOpenEmoji] = useState(false);
+  const [page, setPage] = useState(5);
+  const [fetching, setFetching] = useState(true);
   const [text, setText] = useState('');
   const { t } = useTranslation(['common']);
   const { innerBorderRef } = useOnOutsideClick(() => setOpenEmoji(false));
@@ -21,10 +23,40 @@ export const Comments = ({ id_game }) => {
   const comments = useSelector(getCommentsSelector);
 
   useEffect(async () => {
-    (async () => {
-      await dispatch(getCommentAsync({ id_game, count: 5 }));
-    })();
+    let response = null;
+
+    if (fetching) {
+      (async () => {
+        response = await dispatch(getCommentAsync({ id_game, count: page }));
+      })();
+    }
+
+    setPage((prev) => prev + 5);
+
+    if (response) {
+      setFetching(false);
+    }
+  }, [fetching]);
+
+  useEffect(async () => {
+    document.addEventListener('scroll', scrollHandler);
+
+    return function () {
+      document.removeEventListener('scroll', scrollHandler);
+    };
   }, []);
+
+  const scrollHandler = (e) => {
+    const scrollTop =
+      e.target.documentElement.scrollHeight -
+      (e.target.documentElement.scrollTop + window.innerHeight);
+
+    console.log(scrollTop);
+
+    if (scrollTop < 100) {
+      setFetching(true);
+    }
+  };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -70,7 +102,7 @@ export const Comments = ({ id_game }) => {
       </S.FormComment>
       <S.InnerComment>
         {comments.map((comment) => (
-          <S.CommentBox key={comment?.id}>
+          <S.CommentBox key={comment?._id}>
             <S.Avatar src={comment.avatar} />
             <S.Comment>
               <S.CommentAutorInner>

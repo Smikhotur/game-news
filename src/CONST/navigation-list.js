@@ -3,6 +3,7 @@ import {
   ROUTE_ALL_GAMES,
   ROUTE_SHOP_PAGE,
   ROUTE_BLOG,
+  ROUTE_MESSENGER,
 } from './list-local-routs/list-routes-public';
 import homeImg from '../assets/images/icon/home.png';
 import homeHoverImg from '../assets/images/icon/homeHover.png';
@@ -41,4 +42,11 @@ export const NAVIGATION_RIGHT = [
     icon: blogImg,
     iconHover: blogHoverImg,
   },
+];
+
+export const smallMenu = [
+  { item: 'personal_office', link: '/' },
+  { item: 'settings', link: '/' },
+  { item: 'notification', link: '/' },
+  { item: 'messenger', link: ROUTE_MESSENGER.path },
 ];
