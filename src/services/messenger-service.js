@@ -59,3 +59,15 @@ export const getMessegesAsync = createAsyncThunk(
     }
   }
 );
+
+export const postMessegesAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.createMessegesPrefix,
+  async (data) => {
+    try {
+      const res = await service.post(API.messages, data);
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);

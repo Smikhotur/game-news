@@ -12,7 +12,6 @@ export const registerUser = createAsyncThunk(
   async (data) => {
     try {
       const res = await dataService.post(API.registration, data);
-      console.log(res.data);
 
       if (res.data.accessToken) {
         localStorage.setItem('user', JSON.stringify(res.data));

@@ -3,13 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { S } from './styles';
 import userImg from '../../assets/images/user1.png';
 
-export const ChatMenu = ({
-  // eslint-disable-next-line no-unused-vars
-  conversation,
-  users,
-  currentUser,
-  findConversation,
-}) => {
+export const ChatMenu = ({ users, currentUser, findConversation }) => {
   const { t } = useTranslation(['common']);
 
   return (

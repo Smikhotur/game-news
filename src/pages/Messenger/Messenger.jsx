@@ -64,6 +64,7 @@ const Messenger = () => {
           messeges={messeges}
           avatar={avatar}
           currentUser={currentUser}
+          users={users}
         />
       </S.WrapperMessenger>
     </S.Container>

@@ -49,6 +49,11 @@ S.ChatInner = styled.div`
   }
 `;
 
+S.RefScroll = styled.div`
+  display: flex;
+  flex-direction: column;
+`;
+
 S.ChatInnerNull = styled.div`
   display: flex;
   flex-direction: column;
@@ -88,7 +93,7 @@ S.SmsAvatar = styled.img`
 S.SmsText = styled.div`
   display: flex;
   align-items: center;
-  background-color: ${({ color }) => (color ? colors.white : colors.blue)};
+  background-color: ${({ color }) => color};
   padding: 14px 25px;
   border-radius: 8px;
   color: ${colors.blackBlue};
@@ -101,7 +106,7 @@ S.SmsData = styled.div`
   font-size: 12px;
 `;
 
-S.InnerTitle = styled.div`
+S.InnerTitle = styled.form`
   position: relative;
   display: flex;
   background-color: ${colors.whiteOpacity};
@@ -109,6 +114,10 @@ S.InnerTitle = styled.div`
   align-items: center;
   padding: 0 20px;
   border-top: 1px solid ${colors.greyOpacity};
+
+  > img {
+    margin-right: 10px;
+  }
 `;
 
 S.Text = styled.textarea`

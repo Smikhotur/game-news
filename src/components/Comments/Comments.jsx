@@ -89,7 +89,14 @@ export const Comments = ({ id_game }) => {
         <S.InnerTitle ref={innerBorderRef}>
           <S.FormTitle>{t('leave_comment')}</S.FormTitle>
           <img onClick={handleChange} title="Emoji" src={emoji} alt="" />
-          <Emoji setText={setText} openEmoji={openEmoji} />
+          <Emoji
+            setText={setText}
+            openEmoji={openEmoji}
+            position={{
+              right: '37px',
+              top: '0',
+            }}
+          />
         </S.InnerTitle>
         <S.InnerTitle>
           <S.Text

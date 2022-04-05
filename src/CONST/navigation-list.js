@@ -45,8 +45,8 @@ export const NAVIGATION_RIGHT = [
 ];
 
 export const smallMenu = [
-  { item: 'personal_office', link: '/' },
-  { item: 'settings', link: '/' },
-  { item: 'notification', link: '/' },
+  { item: 'personal_office', link: '/404' },
+  { item: 'settings', link: '/404' },
+  { item: 'notification', link: '/404' },
   { item: 'messenger', link: ROUTE_MESSENGER.path },
 ];

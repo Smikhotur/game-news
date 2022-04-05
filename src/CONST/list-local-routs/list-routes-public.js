@@ -53,3 +53,9 @@ export const ROUTE_MESSENGER = {
   params: [],
   getFullUrl: formatterConcatPath,
 };
+
+export const ROUTE_PAGE_404 = {
+  path: '/404',
+  params: [],
+  getFullUrl: formatterConcatPath,
+};

@@ -7,8 +7,7 @@ export const S = {};
 
 S.EmojiWrapper = styled.div`
   position: absolute;
-  right: 37px;
-  top: 0;
+  ${({ position }) => position}
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;

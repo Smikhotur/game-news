@@ -7,6 +7,7 @@ import {
   ROUTE_HOME_PAGE,
   ROUTE_LOGIN_PAGE,
   ROUTE_MESSENGER,
+  ROUTE_PAGE_404,
   ROUTE_REGISTRATION_PAGE,
   ROUTE_SHOP_PAGE,
 } from '../CONST/list-local-routs/list-routes-public';
@@ -27,6 +28,8 @@ const BestSeriesGames = React.lazy(() =>
 const GamesAllPage = React.lazy(() =>
   import('../pages/GamesAllPage/GamesAllPage')
 );
+
+const Page404 = React.lazy(() => import('../pages/Page404/Page404'));
 
 const BlogPage = React.lazy(() => import('../pages/BlogPage/BlogPage'));
 const ShopPage = React.lazy(() => import('../pages/ShopPage/ShopPage'));
@@ -56,6 +59,11 @@ export const PUBLIC_ROUTER = [
   {
     path: ROUTE_BLOG.getFullUrl(),
     page: BlogPage,
+    hideAfterLogin: false,
+  },
+  {
+    path: ROUTE_PAGE_404.getFullUrl(),
+    page: Page404,
     hideAfterLogin: false,
   },
 ];

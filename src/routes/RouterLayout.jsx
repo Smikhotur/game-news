@@ -1,7 +1,8 @@
 import React from 'react';
+// eslint-disable-next-line no-unused-vars
 import { Redirect, Route, Switch } from 'react-router-dom';
 import { ROUTE_LOGIN_PAGE } from '../CONST/list-local-routs/list-routes-public';
-import Page404 from '../components/Page404/Page404';
+import Page404 from '../pages/Page404/Page404';
 import { PROTECT_ROUTER, PUBLIC_ROUTER } from './indexRouter';
 import PrivateRoute from './PrivateRoute';
 import { useSelector } from 'react-redux';
