@@ -27,14 +27,19 @@ export const ChatBox = ({ currentChat, messeges, avatar }) => {
 
   useEffect(() => {
     socket.current = io('https://blooming-citadel-20389.herokuapp.com/');
+    // socket.current = io('ws://localhost:5000');
+
     socket.current.on('getMessage', (data) => {
+
       setArrivalMessage({
         sender: data.sender,
         text: data.text,
         createdAt: Date.now(),
       });
     });
-  }, []);
+  }, [messeges]);
+
+  console.log(messeges);
 
   useEffect(() => {
     arrivalMessage &&
@@ -45,7 +50,7 @@ export const ChatBox = ({ currentChat, messeges, avatar }) => {
   useEffect(() => {
     socket.current.emit('addUser', currentUser.user.id);
     socket.current.on('getUsers', (users) => {
-      console.log(users);
+      // console.log(users);
     });
   }, [currentUser.user]);
 
