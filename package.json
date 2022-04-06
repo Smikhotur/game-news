@@ -91,12 +91,6 @@
   },
   "devDependencies": {
     "babel-eslint": "^10.1.0",
-    "eslint": "^7.32.0",
-    "eslint-config-prettier": "^7.2.0",
-    "eslint-config-standard-react": "^9.2.0",
-    "eslint-plugin-prettier": "^3.4.1",
-    "eslint-plugin-react": "^7.24.0",
-    "prettier": "2.5.1",
     "react-error-overlay": "6.0.9",
     "webpack": "4.44.2"
   },
