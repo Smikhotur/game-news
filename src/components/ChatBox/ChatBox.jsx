@@ -26,7 +26,7 @@ export const ChatBox = ({ currentChat, messeges, avatar }) => {
   const [onlineUsers, setOnlineUsers] = useState([]);
 
   useEffect(() => {
-    socket.current = io('ws://localhost:8900');
+    socket.current = io('https://blooming-citadel-20389.herokuapp.com/');
     socket.current.on('getMessage', (data) => {
       setArrivalMessage({
         sender: data.sender,

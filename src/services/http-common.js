@@ -3,6 +3,7 @@ import { API } from '../CONST/api-endpoints';
 import { getAuthUserStorage } from '../helpers/getAuthUser';
 
 export const API_URL = 'https://blooming-citadel-20389.herokuapp.com';
+// export const API_URL = 'http://localhost:5000';
 
 const http = axios.create({
   baseURL: API_URL,
