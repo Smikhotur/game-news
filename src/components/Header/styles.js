@@ -229,6 +229,8 @@ S.TransformSkew = styled.div`
 
   @media ${devices.mobileXL} {
     top: 113px;
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
   }
 
   @media ${devices.mobileL} {

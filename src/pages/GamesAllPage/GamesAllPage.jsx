@@ -27,7 +27,7 @@ const GamesAllPage = () => {
   const match = useRouteMatch();
   const history = useHistory();
 
-  useEffect(async () => {
+  useEffect(() => {
     (async () => {
       const result = await dispatch(allGamesAsync());
       setPending(result.meta.requestStatus);

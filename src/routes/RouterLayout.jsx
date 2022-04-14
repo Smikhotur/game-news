@@ -8,7 +8,7 @@ import PrivateRoute from './PrivateRoute';
 import { useSelector } from 'react-redux';
 import { getIsAuthSelector } from '../selectors/selector-auth-user';
 
-const RouterLayout = () => {
+const RouterLayout = ({ socket }) => {
   const isAuth = useSelector(getIsAuthSelector);
 
   return (
@@ -21,7 +21,7 @@ const RouterLayout = () => {
             } else {
               return (
                 <Route exact={true} path={router.path} key={key}>
-                  <router.page />
+                  <router.page socket={socket} />
                 </Route>
               );
             }
@@ -35,7 +35,7 @@ const RouterLayout = () => {
                 isAuth={isAuth}
                 loadingStatus={true}
               >
-                <router.page />
+                <router.page socket={socket} />
               </PrivateRoute>
             );
           })}

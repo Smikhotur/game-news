@@ -18,7 +18,6 @@ export const Pagination = ({ games, setStartShow, setEndShow }) => {
     }
 
     if (count >= AMOUNT.PAGE) {
-      console.log('hello');
       setEndPage((prev) => prev + 1);
       setStartPage((prev) => prev + 1);
     }
@@ -44,8 +43,6 @@ export const Pagination = ({ games, setStartShow, setEndShow }) => {
       behavior: 'smooth',
     });
   };
-
-  console.log(games.length);
 
   return (
     <>

@@ -4,4 +4,5 @@ export const MESSENGER_TYPES_PREFIX = {
   getMessegesPrefix: 'getMesseges/getMessegesPrefix',
   createMessegesPrefix: 'createMesseges/createMessegesPrefix',
   usersPrefix: 'users/usersPrefix',
+  deleteMessagePrefix: 'deleteMessage/deleteMessagePrefix',
 };

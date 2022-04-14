@@ -10,8 +10,6 @@ export const Stars = () => {
     setPercentageColoring(calculatePercentageOfStarsColoring(number));
   };
 
-  console.log(percentageColoring);
-
   return (
     <S.StarsRating>
       <S.StarsBody>

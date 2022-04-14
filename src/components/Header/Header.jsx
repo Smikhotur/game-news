@@ -20,8 +20,9 @@ import menuImg from '../../assets/images/menu.png';
 import { setBurgerMenu } from '../../redux-slices/management-ui-slice';
 import useOnOutsideClick from '../../custom-hooks/useOnOutsideClick';
 import { smallMenu } from '../../CONST/navigation-list';
+import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
 
-const Header = () => {
+const Header = ({ socket }) => {
   const { innerBorderRef } = useOnOutsideClick(() => setOpenModal(!openModal));
   const [openModal, setOpenModal] = useState(false);
   const { t } = useTranslation(['common']);
@@ -43,8 +44,13 @@ const Header = () => {
     setOpenModal(!openModal);
   };
 
-  const onLogOut = () => {
-    dispatch(logoutUser());
+  const onLogOut = async () => {
+    const res = await dispatch(logoutUser());
+
+    if (res?.meta?.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
+      socket.current.emit('remove');
+      socket.current.off();
+    }
   };
 
   return (

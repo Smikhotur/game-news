@@ -9,3 +9,7 @@ export const getUsersSelector = (state) => {
 export const getMessegesSelector = (state) => {
   return state.messenger.messeges;
 };
+
+export const getUnreadSelector = (state) => {
+  return state.messenger.unread;
+};

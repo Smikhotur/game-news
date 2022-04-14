@@ -51,8 +51,6 @@ export const Comments = ({ id_game }) => {
       e.target.documentElement.scrollHeight -
       (e.target.documentElement.scrollTop + window.innerHeight);
 
-    console.log(scrollTop);
-
     if (scrollTop < 100) {
       setFetching(true);
     }

@@ -12,7 +12,6 @@ class dataService {
       });
       configForMethod.cancelToken = source.token;
     }
-    console.log(api, configForMethod);
     return http.get(api, configForMethod);
   }
 

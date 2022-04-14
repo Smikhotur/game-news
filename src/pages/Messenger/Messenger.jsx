@@ -12,16 +12,25 @@ import {
   getConversationAsync,
   getMessegesAsync,
   getUsersAsync,
+  postConversationAsync,
 } from '../../services/messenger-service';
 
-const Messenger = () => {
+const Messenger = ({ socket }) => {
   const [currentChat, setCurrentChat] = useState(null);
+  // const [onlineUsers, setOnlineUsers] = useState(null);
+  const [receiverId, setReceiverId] = useState(null);
   const [avatar, setAvatar] = useState('');
   const currentUser = JSON.parse(localStorage.getItem('user'));
   const conversation = useSelector(getConversationSelector);
   const messeges = useSelector(getMessegesSelector);
   const users = useSelector(getUsersSelector);
   const dispatch = useDispatch();
+
+  const findConversation = (id) => {
+    setCurrentChat(
+      conversation?.find((el) => el.members.find((idChat) => idChat === id))
+    );
+  };
 
   useEffect(() => {
     (async () => {
@@ -41,14 +50,19 @@ const Messenger = () => {
         await dispatch(getMessegesAsync(currentChat._id));
       })();
     }
-  }, [currentChat]);
 
-  const findConversation = (id, avatar) => {
-    setCurrentChat(
-      conversation.find((el) => el.members.find((idChat) => idChat === id))
-    );
-    setAvatar(avatar);
-  };
+    if (currentChat === undefined) {
+      (async () => {
+        const res = await dispatch(
+          postConversationAsync({
+            senderId: currentUser.user.id,
+            receiverId,
+          })
+        );
+        setCurrentChat(res.payload);
+      })();
+    }
+  }, [currentChat]);
 
   return (
     <S.Container>
@@ -57,14 +71,15 @@ const Messenger = () => {
           conversation={conversation}
           users={users}
           currentUser={currentUser.user.id}
+          setReceiverId={setReceiverId}
+          setAvatar={setAvatar}
           findConversation={findConversation}
         />
         <ChatBox
           currentChat={currentChat}
           messeges={messeges}
           avatar={avatar}
-          currentUser={currentUser}
-          users={users}
+          socket={socket}
         />
       </S.WrapperMessenger>
     </S.Container>

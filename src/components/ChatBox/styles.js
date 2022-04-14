@@ -1,13 +1,21 @@
 import styled from 'styled-components';
 import '../../assets/font.css';
 import { colors } from '../../CONST/colors';
-// import { devices } from '../../CONST/break-point';
+import { devices } from '../../CONST/break-point';
 
 export const S = {};
 
 S.ChatBox = styled.div`
   width: calc(100% - 360px);
   color: ${colors.white};
+
+  @media ${devices.laptopXL} {
+    width: calc(100% - 277px);
+  }
+
+  @media ${devices.tabletL} {
+    width: 100%;
+  }
 `;
 
 S.Title = styled.div`
@@ -21,19 +29,30 @@ S.Title = styled.div`
   padding: 0 20px;
   letter-spacing: 2px;
   font-size: 28px;
+
+  @media ${devices.tabletL} {
+    padding: 0 0 0 35px;
+  }
 `;
 
 S.ChatInner = styled.div`
   display: flex;
   flex-direction: column;
-  gap: 20px;
   background-color: ${colors.whiteOpacity};
   width: 100%;
   color: ${colors.white};
   padding: 10px 20px;
   letter-spacing: 1.5px;
   height: calc(100vh - 431px);
-  overflow-y: scroll;
+  overflow-y: auto;
+
+  @media ${devices.laptopXL} {
+    height: calc(100vh - 356px);
+  }
+
+  @media ${devices.mobileL} {
+    height: calc(100vh - 328px);
+  }
 
   &::-webkit-scrollbar {
     width: 12px;
@@ -51,7 +70,16 @@ S.ChatInner = styled.div`
 
 S.RefScroll = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: ${({ direction }) => direction};
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 25px;
+`;
+
+S.DotsImg = styled.img`
+  width: 18px;
+  height: 18px;
+  cursor: pointer;
 `;
 
 S.ChatInnerNull = styled.div`
@@ -66,20 +94,33 @@ S.ChatInnerNull = styled.div`
   padding: 10px 20px;
   letter-spacing: 1.5px;
   height: calc(100vh - 368px);
+
+  @media ${devices.laptopXL} {
+    height: calc(100vh - 293px);
+  }
+
+  @media ${devices.mobileL} {
+    height: calc(100vh - 265px);
+    font-size: 14px;
+  }
 `;
 
 S.SmsBoxLeft = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   align-self: flex-start;
   gap: 15px;
+  white-space: nowrap;
 `;
 
 S.SmsBoxRight = styled.div`
+  position: relative;
   display: flex;
   align-items: center;
   align-self: flex-end;
   gap: 15px;
+  white-space: nowrap;
 `;
 
 S.SmsAvatar = styled.img`
@@ -98,12 +139,54 @@ S.SmsText = styled.div`
   border-radius: 8px;
   color: ${colors.blackBlue};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  white-space: pre-line;
+  word-break: break-word;
+
+  @media ${devices.mobileXL} {
+    padding: 14px 10px;
+  }
 `;
 
 S.SmsData = styled.div`
   display: flex;
   align-items: center;
   font-size: 12px;
+  white-space: nowrap;
+
+  @media ${devices.mobileL} {
+    position: absolute;
+    ${({ position }) => position};
+    bottom: -19px;
+  }
+`;
+
+S.SmsMenuInner = styled.div`
+  position: relative;
+  ${({ margin }) => margin};
+`;
+
+S.SmsMenu = styled.div`
+  position: absolute;
+  ${({ position }) => position};
+  padding: 10px;
+  background-color: ${colors.blackOpaciry};
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  border-radius: 6px;
+
+  > div {
+    display: flex;
+    justify-content: space-between;
+    cursor: pointer;
+
+    > span {
+      margin-right: 10px;
+      text-transform: capitalize;
+    }
+
+    &:first-child {
+      margin-bottom: 15px;
+    }
+  }
 `;
 
 S.InnerTitle = styled.form`

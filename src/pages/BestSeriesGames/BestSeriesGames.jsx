@@ -30,8 +30,6 @@ const BestSeriesGames = () => {
   }, [match.params.nameGame]);
 
   const findHref = ({ target }, id) => {
-    console.log(id);
-
     if (target.href === undefined) {
       history.push(`${ROUTE_DETAILS_PAGE.path}/${id}`);
     }

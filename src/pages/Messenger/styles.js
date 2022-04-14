@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 import '../../assets/font.css';
 // import { colors } from '../../CONST/colors';
-// import { devices } from '../../CONST/break-point';
+import { devices } from '../../CONST/break-point';
 
 export const S = {};
 
@@ -12,6 +12,11 @@ S.Container = styled.div`
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+
+  @media ${devices.laptopXL} {
+    display: flex;
+    justify-content: center;
+  }
 `;
 
 S.WrapperMessenger = styled.section`
@@ -22,4 +27,21 @@ S.WrapperMessenger = styled.section`
   height: 100%;
   min-height: calc(100vh - 143px);
   padding-bottom: 143px;
+  overflow: hidden;
+
+  @media ${devices.laptopXL} {
+    max-width: 100%;
+    width: 100%;
+    margin: 0 50px;
+  }
+
+  @media ${devices.mobileXL} {
+    min-height: 100vh;
+    padding: 143px 0 85px;
+    margin: 0;
+  }
+
+  @media ${devices.mobileL} {
+    padding: 123px 0 77px;
+  }
 `;

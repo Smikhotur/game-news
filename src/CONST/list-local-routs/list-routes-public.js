@@ -50,7 +50,7 @@ export const ROUTE_SHOP_PAGE = {
 
 export const ROUTE_MESSENGER = {
   path: '/messenger',
-  params: [],
+  params: ['receiverId?'],
   getFullUrl: formatterConcatPath,
 };
 

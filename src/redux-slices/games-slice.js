@@ -16,7 +16,6 @@ export const gamesSlice = createSlice({
       state.bestSeriesGamesIsLoading = false;
     },
     setBestSeriesGamesFetching: (state) => {
-      console.log('hello from fetching');
       state.bestSeriesGamesIsLoading = true;
     },
     setBestSeriesGamesFetchingError: (state, action) => {

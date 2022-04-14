@@ -10,10 +10,10 @@ import service from './service';
 
 export const postConversationAsync = createAsyncThunk(
   MESSENGER_TYPES_PREFIX.conversationPrefix,
-  async (data, { dispatch }) => {
+  async (data) => {
     try {
       const res = await service.post(API.conversations, data);
-      dispatch(setConversation(res.data));
+
       return res.data;
     } catch (e) {
       return e.response.data.message;
@@ -65,6 +65,18 @@ export const postMessegesAsync = createAsyncThunk(
   async (data) => {
     try {
       const res = await service.post(API.messages, data);
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const deleteMessageAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.deleteMessagePrefix,
+  async (data) => {
+    try {
+      const res = await service.delete(`${API.messages}/${data}`);
       return res.data;
     } catch (e) {
       return e.response.data.message;

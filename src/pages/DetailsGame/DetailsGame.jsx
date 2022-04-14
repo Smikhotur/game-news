@@ -39,7 +39,6 @@ const DetailsGame = () => {
   }, []);
 
   const nextImage = () => {
-    console.log('count', count);
     if (count + 1 < gameDetails?.screenshots.length) {
       setCount((prev) => prev + 1);
     }

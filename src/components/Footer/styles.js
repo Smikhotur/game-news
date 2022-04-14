@@ -30,6 +30,8 @@ S.TransformSkew = styled.div`
   @media ${devices.mobileXL} {
     top: -18px;
     border-bottom: 18px solid rgba(29, 24, 43, 0.8);
+    border-left: 0 solid transparent;
+    border-right: 0 solid transparent;
   }
 
   @media ${devices.mobileL} {

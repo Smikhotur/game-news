@@ -5,7 +5,7 @@ export const sizes = {
   sm: 720,
   md: 900,
   lg: 1024,
-  xl: 1200,
+  xl: 1330,
 };
 
 export const devices = {
@@ -15,5 +15,6 @@ export const devices = {
   tablet: `(max-width: ${sizes.sm}px)`,
   tabletL: `(max-width: ${sizes.md}px)`,
   laptop: `(max-width: ${sizes.lg}px)`,
+  laptopXL: `(max-width: ${sizes.xl}px)`,
   or: '(orientation: portrait)',
 };

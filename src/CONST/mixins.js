@@ -9,3 +9,21 @@ export const stylesAvatar = {
   width: '29px',
   'border-radius': '0',
 };
+
+export const left = {
+  left: '22px',
+  top: '-30px',
+};
+
+export const right = {
+  right: '22px',
+  top: '-29px',
+};
+
+export const marginRight = {
+  'padding-left': '35px',
+};
+
+export const marginLeft = {
+  'padding-right': '35px',
+};

@@ -60,5 +60,7 @@
   "write_comments": "Write a comment",
   "leave_comment": "Leave a comment",
   "search": "Search...",
-  "chat": "Open a conversation to start a chat"
+  "chat": "Open a conversation to start a chat",
+  "edit": "Edit",
+  "delete": "Delete"
 }

@@ -13,8 +13,10 @@ import {
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../redux-slices/auth-slice';
 import { useHistory } from 'react-router';
+import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
+import { io } from 'socket.io-client';
 
-const LoginPage = () => {
+const LoginPage = ({ socket }) => {
   const { t } = useTranslation(['common']);
   const dispatch = useDispatch();
   const history = useHistory();
@@ -25,6 +27,12 @@ const LoginPage = () => {
 
   const handleSubmitLogin = async (data) => {
     const promise = await dispatch(loginUser(data));
+
+    if (promise?.meta?.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
+      socket.current = io('ws://localhost:5000');
+      socket.current.emit('addUser', promise?.payload.user.id);
+    }
+
     promise?.payload?.accessToken ? history.push(ROUTE_HOME_PAGE.path) : null;
   };
 

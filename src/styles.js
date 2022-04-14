@@ -14,6 +14,11 @@ S.Wrapper = styled.div`
   }
 `;
 
+S.RouterWrapper = styled.div`
+  position: relative;
+  min-height: 100%;
+`;
+
 S.Container = styled.section`
   position: absolute;
   z-index: 3;

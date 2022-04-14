@@ -6,6 +6,7 @@ const MessengerSlice = createSlice({
     conversation: [],
     users: [],
     messeges: [],
+    unread: [],
   },
   reducers: {
     setConversation: (state, actions) => {
@@ -18,9 +19,13 @@ const MessengerSlice = createSlice({
     setMesseges: (state, actions) => {
       state.messeges = actions.payload;
     },
+
+    setUnread: (state, actions) => {
+      state.unread = actions.payload;
+    },
   },
 });
 
-export const { setConversation, setUsers, setMesseges } =
+export const { setConversation, setUsers, setMesseges, setUnread } =
   MessengerSlice.actions;
 export default MessengerSlice.reducer;
