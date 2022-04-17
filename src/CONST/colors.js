@@ -14,4 +14,5 @@ export const colors = {
   transparent: 'transparent',
   yellowBright: '#FDBE2F',
   blue: '#a8daee',
+  lightBlue: 'hsl(216, 22%, 69%)',
 };

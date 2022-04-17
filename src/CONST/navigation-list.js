@@ -4,6 +4,7 @@ import {
   ROUTE_SHOP_PAGE,
   ROUTE_BLOG,
   ROUTE_MESSENGER,
+  ROUTE_MY_PROFILE,
 } from './list-local-routs/list-routes-public';
 import homeImg from '../assets/images/icon/home.png';
 import homeHoverImg from '../assets/images/icon/homeHover.png';
@@ -13,6 +14,7 @@ import shopImg from '../assets/images/icon/shop.png';
 import shopHoverImg from '../assets/images/icon/shopHover.png';
 import blogImg from '../assets/images/icon/blog.png';
 import blogHoverImg from '../assets/images/icon/blogHover.png';
+import { getCurrentUser } from '../helpers/getAuthUser';
 
 export const NAVIGATION_LEFT = [
   {
@@ -45,7 +47,10 @@ export const NAVIGATION_RIGHT = [
 ];
 
 export const smallMenu = [
-  { item: 'personal_office', link: '/404' },
+  {
+    item: 'personal_office',
+    link: `${ROUTE_MY_PROFILE.path}/${getCurrentUser().user.id}`,
+  },
   { item: 'settings', link: '/404' },
   { item: 'notification', link: '/404' },
   { item: 'messenger', link: ROUTE_MESSENGER.path },

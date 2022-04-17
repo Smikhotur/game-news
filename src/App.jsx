@@ -49,8 +49,6 @@ function App() {
     }
   }, []);
 
-  console.log(socket.current);
-
   useEffect(() => {
     if (!location.pathname.includes(ROUTE_MESSENGER.path)) {
       message && dispatch(setUnread([...unread, message]));
