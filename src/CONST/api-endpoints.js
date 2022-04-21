@@ -12,4 +12,6 @@ export const API = {
   conversations: '/api/conversations',
   messages: '/api/messages',
   users: '/api/messages/users',
+  getStars: '/api/game/stars',
+  postStars: '/api/game/star-game',
 };

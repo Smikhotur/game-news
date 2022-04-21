@@ -11,7 +11,12 @@ S.InnerInfo = styled.div`
   padding: 30px 15px 0;
 
   > img {
-    max-width: 365px;
+    max-width: 475px;
+
+    @media ${devices.tabletL} {
+      width: 50%;
+      margin-bottom: 20px;
+    }
 
     @media ${devices.tablet} {
       width: 70%;
@@ -50,6 +55,7 @@ S.InfoSubtitle = styled.div`
 
 S.WrapperStars = styled.div`
   align-self: flex-start;
+  margin-top: 15px;
 `;
 
 S.StarsTitle = styled.div`

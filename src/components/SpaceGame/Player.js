@@ -23,7 +23,7 @@ export class Player {
     this.score += score;
   };
 
-  update = (firecb, bullets) => {
+  update = (firecb, bullets, gameOverFunction, settimeout) => {
     if (!this.dead) {
       bullets.forEach((bullet) => {
         if (
@@ -56,7 +56,8 @@ export class Player {
     };
     if (this.health <= 0) {
       this.dead = true;
-      gameOver(this.score);
+      gameOverFunction(this.score);
+      clearTimeout(settimeout);
     }
   };
 
@@ -73,28 +74,6 @@ export class Player {
     ctx.fillStyle = 'lightgreen';
     ctx.fillText(`Score: ${this.score}`, 15, 25);
   };
-}
-
-export function gameOver(score) {
-  let canvas = document.getElementById('rightBox');
-
-  if (canvas) {
-    canvas.innerHTML = `
-      <center>
-        <br/>
-        <h2 class="text">Game Over!</h2>
-        <p class="text">Your Score: ${score}</p>
-        <br/>
-        <button onClick="location.reload()" class="button-82-pushable" role="button">
-          <span class="button-82-shadow"></span>
-          <span class="button-82-edge"></span>
-          <span class="button-82-front text">
-            Again
-          </span>
-        </button>
-      </center>
-    `;
-  }
 }
 
 export default Player;

@@ -3,7 +3,7 @@ import bang from '../../assets/bang.ogg';
 
 export class Boss {
   dead = false;
-  health = 200;
+  health = 1000;
   speed = 5;
   firebullets = [];
   lastFireAt = Date.now();
@@ -22,7 +22,7 @@ export class Boss {
     this.dead = false;
   };
 
-  update = (firecb, bullets, player) => {
+  update = (firecb, bullets, player, victoryFunction) => {
     if (!this.dead) {
       bullets.forEach((bullet) => {
         if (
@@ -79,14 +79,15 @@ export class Boss {
       }
     }
 
-    if (this.health === 100) {
+    if (this.health === 500) {
       this.dead = true;
-      this.health = 90;
-      player.increaseScore(90);
+      this.health = 490;
+      player.increaseScore(200);
     }
 
     if (this.health <= 0) {
       this.dead = true;
+      victoryFunction(player.score);
     }
   };
 

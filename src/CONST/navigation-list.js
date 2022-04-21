@@ -49,7 +49,7 @@ export const NAVIGATION_RIGHT = [
 export const smallMenu = [
   {
     item: 'personal_office',
-    link: `${ROUTE_MY_PROFILE.path}/${getCurrentUser().user.id}`,
+    link: `${ROUTE_MY_PROFILE.path}/${getCurrentUser()?.user.id}`,
   },
   { item: 'settings', link: '/404' },
   { item: 'notification', link: '/404' },

@@ -9,6 +9,7 @@ export const gamesSlice = createSlice({
     allGames: [],
     detailsGame: {},
     comments: [],
+    stars: null,
   },
   reducers: {
     setBestSeriesGames: (state, action) => {
@@ -43,6 +44,9 @@ export const gamesSlice = createSlice({
     setComments: (state, action) => {
       state.comments = action.payload;
     },
+    setStars: (state, action) => {
+      state.stars = action.payload;
+    },
   },
 });
 
@@ -56,5 +60,6 @@ export const {
   setGameDetails,
   setNewComments,
   setComments,
+  setStars,
 } = gamesSlice.actions;
 export default gamesSlice.reducer;

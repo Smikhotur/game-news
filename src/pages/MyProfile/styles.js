@@ -92,67 +92,77 @@ S.RightBox = styled.div`
     border-radius: 10px;
   }
 
-  > button {
-    background-color: #3dd1e7;
-    border: 0 solid #e5e7eb;
-    box-sizing: border-box;
-    color: #000000;
+  > div {
     display: flex;
-    font-family: ui-sans-serif, system-ui, -apple-system, system-ui, 'Segoe UI',
-      Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
-      'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-      'Noto Color Emoji';
-    font-size: 1rem;
-    font-weight: 700;
     justify-content: center;
-    line-height: 1.75rem;
-    padding: 0.75rem 1.65rem;
-    position: relative;
-    text-align: center;
-    text-decoration: none #000000 solid;
-    text-decoration-thickness: auto;
-    width: 50%;
-    max-width: 460px;
-    position: relative;
-    cursor: pointer;
-    transform: rotate(-2deg);
-    user-select: none;
-    -webkit-user-select: none;
-    touch-action: manipulation;
+    align-items: center;
+    height: 100%;
+    width: 100%;
 
-    &:focus {
-      outline: 0;
-    }
+    > button {
+      background-color: #3dd1e7;
+      border: 0 solid #e5e7eb;
+      box-sizing: border-box;
+      color: #000000;
+      display: flex;
+      font-family: ui-sans-serif, system-ui, -apple-system, system-ui,
+        'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif,
+        'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+        'Noto Color Emoji';
+      font-size: 1rem;
+      font-weight: 700;
+      justify-content: center;
+      line-height: 1.75rem;
+      padding: 0.75rem 1.65rem;
+      position: relative;
+      text-align: center;
+      text-decoration: none #000000 solid;
+      text-decoration-thickness: auto;
+      width: 50%;
+      max-width: 460px;
+      position: relative;
+      cursor: pointer;
+      transform: rotate(-2deg);
+      user-select: none;
+      -webkit-user-select: none;
+      touch-action: manipulation;
 
-    &:after {
-      content: '';
-      position: absolute;
-      border: 1px solid #000000;
-      bottom: 4px;
-      left: 4px;
-      width: calc(100% - 1px);
-      height: calc(100% - 1px);
-    }
+      &:focus {
+        outline: 0;
+      }
 
-    &:hover:after {
-      bottom: 2px;
-      left: 2px;
-    }
+      &:after {
+        content: '';
+        position: absolute;
+        border: 1px solid #000000;
+        bottom: 4px;
+        left: 4px;
+        width: calc(100% - 1px);
+        height: calc(100% - 1px);
+      }
 
-    @media (min-width: 768px) {
-      padding: 0.75rem 3rem;
-      font-size: 1.25rem;
+      &:hover:after {
+        bottom: 2px;
+        left: 2px;
+      }
+
+      @media (min-width: 768px) {
+        padding: 0.75rem 3rem;
+        font-size: 1.25rem;
+      }
     }
   }
 `;
 
-S.StopBtn = styled.div`
+S.StopBtn = styled.button`
   position: absolute;
   text-transform: uppercase;
   bottom: 15px;
   left: 20px;
   border-bottom: 1px solid ${colors.orange};
   cursor: pointer;
+  background-color: ${colors.transparent};
+  color: ${colors.white};
 
   &:hover {
     color: ${colors.orange};

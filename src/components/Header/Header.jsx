@@ -61,7 +61,7 @@ const Header = ({ socket }) => {
           {socials.map((social, key) => (
             <S.BtnSocial type="button" key={key}>
               <a href={social.link} rel="noopener noreferrer" target="_blank">
-                <img src={social.image} alt="" />
+                <img src={social.image} alt="social" />
               </a>
             </S.BtnSocial>
           ))}
@@ -72,7 +72,7 @@ const Header = ({ socket }) => {
           {!isAuth ? (
             <S.LoginLink to={ROUTE_LOGIN_PAGE.path}>
               <S.BtnSocial type="button">
-                <img src={userImage} alt="" />
+                <img src={userImage} alt="icon" />
               </S.BtnSocial>
             </S.LoginLink>
           ) : (
@@ -81,7 +81,7 @@ const Header = ({ socket }) => {
               onClick={toOpenModal}
             >
               <S.NameUser>{`${user?.user?.firstName} ${user?.user?.lastName}`}</S.NameUser>
-              <img src={user.user?.avatar || userBig} alt="" />
+              <img src={user.user?.avatar || userBig} alt="avatar" />
               {openModal && (
                 <S.ModalLogOut ref={innerBorderRef}>
                   <S.CloseModal onClick={toOpenModal}>X</S.CloseModal>

@@ -9,6 +9,8 @@ export const colors = {
   menuMesseng: 'rgba(29, 24, 43, 0.5)',
   menuMessengSmall: 'rgb(29, 24, 43)',
   orange: '#ee5519',
+  orangeOver: '#b32f00',
+  yellowOver: '#ffffc8',
   redOpacity: 'rgb(254, 28, 29)',
   colorText: '#282437',
   transparent: 'transparent',

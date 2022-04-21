@@ -56,7 +56,7 @@ export const ROUTE_MESSENGER = {
 
 export const ROUTE_MY_PROFILE = {
   path: '/my-profile',
-  params: ['id'],
+  params: ['id?'],
   getFullUrl: formatterConcatPath,
 };
 

@@ -8,15 +8,20 @@ import { S } from '../../pages/MyProfile/styles';
 import startMus from '../../assets/start.mp3';
 import alien from '../../assets/alien.mp3';
 import laugh from '../../assets/laugh.mp3';
+import { FinishGame } from './FinishGame/FinishGame';
 
 export const SpaceGame = () => {
   const [play, setPlay] = useState(false);
+  const [gameOver, setGameOver] = useState({});
+  let stopPlay = true;
   const [playSound, setPlaySound] = useState(true);
   let start = true;
   let startBoss;
   let canvas;
   let stopGame;
   let ctx;
+  let settimeout;
+  let resultScore;
   let maxMeteorCount = 10;
   let lastMeteorSpawnAt = Date.now();
   const [audio] = useState(new Audio(startMus));
@@ -40,19 +45,55 @@ export const SpaceGame = () => {
     let fireBulletcbBoss = (xpos, ypos) =>
       bulletsBoss.push(new BulletBoss(xpos, ypos));
 
-    if (play) {
+    const removeGame = (score) => {
+      if (score) resultScore = score;
+
+      setPlay(false);
+      audio.pause();
+      audio.pause();
+      bossSound.pause();
+      bossLaugh.pause();
+      clearInterval(stopGame);
+      player = null;
+      boss = null;
+      stopPlay = null;
+
+      return resultScore;
+    };
+
+    const gameOverFunction = (score) => {
+      setGameOver({
+        score: removeGame(score),
+        result: 'over',
+      });
+    };
+
+    const victoryFunction = (score) => {
+      setGameOver({
+        score: removeGame(score),
+        result: 'win',
+      });
+    };
+
+    if (play && stopPlay) {
       canvas = document.getElementById('myCanvas');
       stopGame = setInterval(() => {
         ctx = canvas.getContext('2d');
         ctx.clearRect(0, 0, 525, 475);
 
-        player.update(fireBulletcb, bulletsBoss, boss);
-        player.draw(ctx);
+        player?.update(
+          fireBulletcb,
+          bulletsBoss,
+          gameOverFunction,
+          settimeout,
+          start
+        );
+        player?.draw(ctx);
 
         const random = randomNumber(0, 700);
         if (
-          player.score <= 10 ||
-          (player.score >= 100 && player.score <= 150)
+          player?.score <= 300 ||
+          (player?.score >= 500 && player?.score <= 1000)
         ) {
           if (!start) startBoss = true;
           bossSound.pause();
@@ -72,7 +113,11 @@ export const SpaceGame = () => {
             meteor.update(player, bullets);
             meteor.draw(ctx);
           });
-        } else {
+        }
+        if (
+          (player?.score > 300 && player?.score < 500) ||
+          player?.score > 1000
+        ) {
           if (startBoss) {
             audio.pause();
             bossSound.play();
@@ -80,16 +125,17 @@ export const SpaceGame = () => {
 
           if (start) {
             audio.pause();
-            bossLaugh.play();
-            setTimeout(() => {
+            bossLaugh.autoplay = true;
+            bossLaugh.load();
+            settimeout = setTimeout(() => {
               bossLaugh.pause();
               bossSound.play();
             }, 6000);
             start = false;
           }
-          boss.upDateDead();
-          boss.draw(ctx);
-          boss.update(fireBulletcbBoss, bullets, player);
+          boss?.upDateDead();
+          boss?.draw(ctx);
+          boss?.update(fireBulletcbBoss, bullets, player, victoryFunction);
           bulletsBoss = bulletsBoss.filter((bullet) => {
             return !bullet.dead;
           });
@@ -114,6 +160,10 @@ export const SpaceGame = () => {
     return () => {
       fireBulletcb = null;
       fireBulletcbBoss = null;
+      audio.pause();
+      audio.pause();
+      bossSound.pause();
+      bossLaugh.pause();
     };
   });
 
@@ -132,6 +182,8 @@ export const SpaceGame = () => {
     };
   }, []);
 
+  console.log(gameOver);
+
   return (
     <>
       {play ? (
@@ -141,6 +193,7 @@ export const SpaceGame = () => {
             onClick={() => {
               startSound();
               clearInterval(stopGame);
+              clearTimeout(settimeout);
               setPlay(false);
             }}
             type="button"
@@ -149,15 +202,25 @@ export const SpaceGame = () => {
           </S.StopBtn>
         </>
       ) : (
-        <button
-          onClick={() => {
-            startSound();
-            setPlay(true);
-          }}
-          type="button"
-        >
-          Play
-        </button>
+        <div>
+          {gameOver?.result && (
+            <FinishGame
+              gameOver={gameOver}
+              stopGame={stopGame}
+              setGameOver={setGameOver}
+              bossSound={bossSound}
+            />
+          )}
+          <button
+            onClick={() => {
+              startSound();
+              setPlay(true);
+            }}
+            type="button"
+          >
+            Play
+          </button>
+        </div>
       )}
     </>
   );
