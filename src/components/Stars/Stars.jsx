@@ -1,13 +1,38 @@
-import React, { useState } from 'react';
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react';
+import { useDispatch } from 'react-redux';
+import { useRouteMatch } from 'react-router-dom';
 import { AMOUNT } from '../../CONST/amount';
 import { calculatePercentageOfStarsColoring } from '../../helpers/calculate-percentage-of-stars-coloring';
+import { getCurrentUser } from '../../helpers/getAuthUser';
+import { createStarsAsync } from '../../services/async-api-games';
 import { S } from './styles';
 
-export const Stars = () => {
+export const Stars = ({ stars }) => {
   const [percentageColoring, setPercentageColoring] = useState(0);
+  const dispatch = useDispatch();
+  const match = useRouteMatch();
+
+  console.log(percentageColoring);
 
   const paintOverStars = (number) => {
     setPercentageColoring(calculatePercentageOfStarsColoring(number));
+  };
+
+  useEffect(() => {
+    stars ? paintOverStars(stars?.rating) : paintOverStars(0);
+  }, [stars]);
+
+  const onSubmit = (num) => {
+    stars?.rating
+      ? paintOverStars(stars?.rating)
+      : dispatch(
+          createStarsAsync({
+            id_user: getCurrentUser().user.id,
+            id_game: match.params.id,
+            rating: num,
+          })
+        );
   };
 
   return (
@@ -23,10 +48,14 @@ export const Stars = () => {
               value={percentageColoring}
               type="radio"
               onMouseOver={() => {
-                paintOverStars(number + 1);
+                paintOverStars(stars?.rating ? stars.rating : number + 1);
               }}
-              onMouseLeave={() => paintOverStars(number + 1)}
-              onChange={() => setPercentageColoring(number + 1)}
+              onMouseLeave={() =>
+                paintOverStars(stars?.rating ? stars.rating : 0)
+              }
+              onChange={() => {
+                onSubmit(number + 1);
+              }}
             />
           ))}
         </S.StarsItems>

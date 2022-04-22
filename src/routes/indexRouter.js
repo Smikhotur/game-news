@@ -7,6 +7,7 @@ import {
   ROUTE_HOME_PAGE,
   ROUTE_LOGIN_PAGE,
   ROUTE_MESSENGER,
+  ROUTE_MY_PROFILE,
   ROUTE_PAGE_404,
   ROUTE_REGISTRATION_PAGE,
   ROUTE_SHOP_PAGE,
@@ -34,6 +35,7 @@ const Page404 = React.lazy(() => import('../pages/Page404/Page404'));
 const BlogPage = React.lazy(() => import('../pages/BlogPage/BlogPage'));
 const ShopPage = React.lazy(() => import('../pages/ShopPage/ShopPage'));
 const Messenger = React.lazy(() => import('../pages/Messenger/Messenger'));
+const MyProfile = React.lazy(() => import('../pages/MyProfile/MyProfile'));
 
 export const PUBLIC_ROUTER = [
   {
@@ -87,6 +89,11 @@ export const PROTECT_ROUTER = [
   {
     path: ROUTE_MESSENGER.getFullUrl(),
     page: Messenger,
+    hideAfterLogin: false,
+  },
+  {
+    path: ROUTE_MY_PROFILE.getFullUrl(),
+    page: MyProfile,
     hideAfterLogin: false,
   },
 ];

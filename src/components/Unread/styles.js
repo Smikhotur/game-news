@@ -23,6 +23,12 @@ const rotate = keyframes`
   }
 `;
 
+const blur = keyframes`
+  from {
+    text-shadow: 0 0 10px ${colors.white}, 0 -10px 100px ${colors.lightBlue};
+  }
+`;
+
 S.UnreadInner = styled.div`
   position: fixed;
   right: 15px;
@@ -34,6 +40,8 @@ S.UnreadList = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  animation: ${blur} 0.75s ease-out infinite;
+  text-shadow: 0 0 5px ${colors.white}, 0 0 7px ${colors.white};
 `;
 
 S.UnreadItem = styled(Link)`

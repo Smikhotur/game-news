@@ -4,4 +4,5 @@ export const GAMES_TYPES_PREFIX = {
   gameDetails: 'detailsGame/gameDetails',
   createComment: 'commentCreate/createComment',
   getComments: 'commentsGet/getComments',
+  getStars: 'starsGet/getStars',
 };

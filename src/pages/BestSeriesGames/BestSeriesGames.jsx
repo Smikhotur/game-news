@@ -23,10 +23,12 @@ const BestSeriesGames = () => {
   const match = useRouteMatch();
 
   useEffect(() => {
-    (async () => {
-      const result = await dispatch(seriesGames(match.params.nameGame));
-      setPending(result.meta.requestStatus);
-    })();
+    if (match.params.nameGame) {
+      (async () => {
+        const result = await dispatch(seriesGames(match.params.nameGame));
+        setPending(result.meta.requestStatus);
+      })();
+    }
   }, [match.params.nameGame]);
 
   const findHref = ({ target }, id) => {

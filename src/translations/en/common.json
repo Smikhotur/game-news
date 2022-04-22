@@ -62,5 +62,7 @@
   "search": "Search...",
   "chat": "Open a conversation to start a chat",
   "edit": "Edit",
-  "delete": "Delete"
+  "delete": "Delete",
+  "score": "score",
+  "your_rate": "Your rate"
 }

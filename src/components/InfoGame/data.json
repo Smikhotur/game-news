@@ -1,0 +1,25 @@
+[
+  {
+    "id": "",
+    "description": "",
+    "genre": "",
+    "minimum_system_requirements": {
+      "os": "",
+      "processor": "",
+      "graphics": "",
+      "memory": "",
+      "storage": ""
+    },
+    "release_date": "",
+    "screenshots": [
+      {"id": "1", "image": ""},
+      {"id": "2", "image": ""},
+      {"id": "3", "image": ""},
+      {"id": "4", "image": ""}
+    ],
+    "thumbnail": "",
+    "title": "",
+    "video_url": "",
+    "rating": ""
+  }
+]

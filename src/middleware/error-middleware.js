@@ -11,7 +11,6 @@ import { logoutUser } from '../redux-slices/auth-slice';
 export const errorMiddleware = (api) => (next) => (action) => {
   if (isRejectedWithValue(action)) {
     const { status, info } = action.payload;
-    console.log('errorMiddleware', status);
     switch (true) {
       case status === 500: {
         api.dispatch(setServerError(action.payload));

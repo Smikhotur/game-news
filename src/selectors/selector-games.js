@@ -21,3 +21,7 @@ export const getGameDetails = (state) => {
 export const getCommentsSelector = (state) => {
   return state.games.comments;
 };
+
+export const getStarsSelector = (state) => {
+  return state.games.stars;
+};

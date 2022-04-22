@@ -10,6 +10,7 @@ import {
   setComments,
   setGameDetails,
   setNewComments,
+  setStars,
   settAllGamesError,
 } from '../redux-slices/games-slice';
 import { getGames } from './another-service';
@@ -94,6 +95,35 @@ export const getCommentAsync = createAsyncThunk(
         `${API.getComments}/:${data.id_game}/:${data.count}`
       );
       dispatch(setComments(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const createStarsAsync = createAsyncThunk(
+  GAMES_TYPES_PREFIX.createStars,
+  async (data, { dispatch }) => {
+    try {
+      const res = await service.post(API.postStars, data);
+      dispatch(setStars(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const getStarsAsync = createAsyncThunk(
+  GAMES_TYPES_PREFIX.getStars,
+  async (data, { dispatch }) => {
+    console.log(data);
+    try {
+      const res = await service.get(
+        `${API.getStars}/${data.id_user}/${data.id_game}`
+      );
+      dispatch(setStars(res.data[0]));
       return res.data;
     } catch (e) {
       return e.response.data.message;

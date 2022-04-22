@@ -54,6 +54,12 @@ export const ROUTE_MESSENGER = {
   getFullUrl: formatterConcatPath,
 };
 
+export const ROUTE_MY_PROFILE = {
+  path: '/my-profile',
+  params: ['id?'],
+  getFullUrl: formatterConcatPath,
+};
+
 export const ROUTE_PAGE_404 = {
   path: '/404',
   params: [],

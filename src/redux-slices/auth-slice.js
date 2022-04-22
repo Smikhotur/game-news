@@ -36,7 +36,6 @@ export const loginUser = createAsyncThunk(
 
       return res.data;
     } catch (e) {
-      console.log(e.response.data.message);
       return e.response.data.message;
     }
   }
