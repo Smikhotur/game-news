@@ -51,7 +51,7 @@ export const Stars = ({ stars }) => {
                 paintOverStars(stars?.rating ? stars.rating : number + 1);
               }}
               onMouseLeave={() =>
-                paintOverStars(stars?.rating ? stars.rating : number + 1)
+                paintOverStars(stars?.rating ? stars.rating : 0)
               }
               onChange={() => {
                 onSubmit(number + 1);
