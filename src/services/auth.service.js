@@ -23,6 +23,10 @@ class dataService {
     return http.put(api, data);
   }
 
+  patch(api, data) {
+    return http.patch(api, data);
+  }
+
   delete(api) {
     return http.delete(api);
   }

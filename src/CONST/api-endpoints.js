@@ -3,6 +3,7 @@ export const API = {
   login: '/api/auth/login',
   logout: '/api/auth/logout',
   refresh: '/api/auth/refresh',
+  user: '/api/auth/users',
   bestSeriesGames: '/api/game/best-series',
   allGames: '/api/games',
   detailsGame: '/api/game',
@@ -14,4 +15,5 @@ export const API = {
   users: '/api/messages/users',
   getStars: '/api/game/stars',
   postStars: '/api/game/star-game',
+  errorMessage: '/api/messages/send-error',
 };

@@ -18,10 +18,10 @@ export const SignUpSchema = Yup.object().shape({
     .matches(WITHOUT_WHITE_SPACE_REGEXP, 'cannot_contain_spaces')
     .min(PERSONAL_DATA.minString, 'validation_names')
     .required('last_name_is_required'),
-  nikname: Yup.string()
+  phoneNumber: Yup.string()
     .matches(WITHOUT_WHITE_SPACE_REGEXP, 'cannot_contain_spaces')
     .min(PERSONAL_DATA.minString, 'validation_names')
-    .required('nikname_is_required'),
+    .required('phoneNumber_is_required'),
   password: Yup.string()
     .min(MIN_LENGTH_PASSWORD, 'validation_length_password')
     .required('password_is_required'),

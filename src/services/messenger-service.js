@@ -83,3 +83,15 @@ export const deleteMessageAsync = createAsyncThunk(
     }
   }
 );
+
+export const sendErrorMessageAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.deleteMessagePrefix,
+  async (data) => {
+    try {
+      const res = await service.get(`${API.errorMessage}/${data}`);
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
