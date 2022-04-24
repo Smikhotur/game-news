@@ -4,4 +4,5 @@ export const AUTH_TYPES_PREFIX = {
   authAction: 'auth/auth',
   logoutAction: 'auth/logoutUser',
   checkAuthAction: 'auth/checkAuth',
+  updateInfoUser: 'updateInfo/updateInfoUser',
 };

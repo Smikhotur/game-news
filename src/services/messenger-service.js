@@ -83,3 +83,44 @@ export const deleteMessageAsync = createAsyncThunk(
     }
   }
 );
+
+export const sendErrorMessageAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.deleteMessagePrefix,
+  async (data) => {
+    try {
+      const res = await service.get(`${API.errorMessage}/${data}`);
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const searchUserAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.searchUserPrefix,
+  async (data, { dispatch }) => {
+    try {
+      const res = await service.post(API.userSearch, data);
+      dispatch(setUsers(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const editMessageAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.editMessagePrefix,
+  async (data, { dispatch }) => {
+    try {
+      const res = await service.patch(
+        `${API.upDateMessages}/${data.id}/${data.conversationId}`,
+        data.param
+      );
+      dispatch(setMesseges(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);

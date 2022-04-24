@@ -1,7 +1,7 @@
 import email from '../../assets/images/email.png';
 import password from '../../assets/images/password.png';
 import userInput from '../../assets/images/userInput.png';
-import nikname from '../../assets/images/nikname.png';
+import phoneNumber from '../../assets/images/nikname.png';
 
 export const inputsData = [
   {
@@ -17,10 +17,10 @@ export const inputsData = [
     name: 'lastName',
   },
   {
-    icon: nikname,
-    placeholder: 'nikname',
+    icon: phoneNumber,
+    placeholder: 'phoneNumber',
     type: 'text',
-    name: 'nikname',
+    name: 'phoneNumber',
   },
   {
     icon: email,

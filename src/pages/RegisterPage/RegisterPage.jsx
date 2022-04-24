@@ -16,7 +16,7 @@ const RegisterPage = () => {
     email: '',
     password: '',
     retypePassword: '',
-    nikname: '',
+    phoneNumber: '',
     lastName: '',
     firstName: '',
     file: '',

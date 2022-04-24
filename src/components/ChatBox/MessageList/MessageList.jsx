@@ -7,27 +7,22 @@ import { left, marginLeft, marginRight, right } from '../../../CONST/mixins';
 import { useTranslation } from 'react-i18next';
 import editImg from '../../../assets/images/edit.png';
 import removeImg from '../../../assets/images/remove.png';
-import { useDispatch } from 'react-redux';
-import { deleteMessageAsync } from '../../../services/messenger-service';
-import { HTTP_REQUEST_STATUS } from '../../../CONST/http-request-status';
-import { setMesseges } from '../../../redux-slices/messenger-slice';
+// import { deleteMessageAsync } from '../../../services/messenger-service';
+// import { HTTP_REQUEST_STATUS } from '../../../CONST/http-request-status';
+// import { setMesseges } from '../../../redux-slices/messenger-slice';
+import { getCurrentUser } from '../../../helpers/getAuthUser';
 
-export const MessageList = ({ messeges, avatar, scrollRef }) => {
+export const MessageList = ({
+  messeges,
+  avatar,
+  scrollRef,
+  updateMessage,
+  removeMessage,
+}) => {
   const [openSmsMenu, setOpenSmsMenu] = useState(false);
   const [idMessage, setIdMessage] = useState('');
   const currentUser = JSON.parse(localStorage.getItem('user'));
   const { t } = useTranslation(['common']);
-  const dispatch = useDispatch();
-
-  const removeMessage = async (smsId) => {
-    const res = await dispatch(deleteMessageAsync(smsId));
-
-    if (res.meta.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
-      dispatch(
-        setMesseges(messeges.filter((message) => message._id !== smsId))
-      );
-    }
-  };
 
   return (
     <>
@@ -89,10 +84,17 @@ export const MessageList = ({ messeges, avatar, scrollRef }) => {
               <S.SmsMenu
                 position={sms.sender === currentUser?.user.id ? right : left}
               >
-                <div>
-                  <span>{t('edit')}</span>
-                  <img src={editImg} alt="edit icon" />
-                </div>
+                {sms.sender === getCurrentUser().user.id && (
+                  <div
+                    onClick={() => {
+                      setOpenSmsMenu(false);
+                      updateMessage(sms.text, sms._id);
+                    }}
+                  >
+                    <span>{t('edit')}</span>
+                    <img src={editImg} alt="edit icon" />
+                  </div>
+                )}
                 <div
                   onClick={() => {
                     setOpenSmsMenu(false);

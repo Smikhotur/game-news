@@ -59,12 +59,12 @@ S.ChatInner = styled.div`
   }
 
   &::-webkit-scrollbar-track {
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
   }
 
   &::-webkit-scrollbar-thumb {
     border-radius: 10px;
-    -webkit-box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
+    box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.5);
   }
 `;
 
@@ -172,6 +172,7 @@ S.SmsMenu = styled.div`
   background-color: ${colors.blackOpaciry};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 6px;
+  z-index: 15;
 
   > div {
     display: flex;
@@ -183,8 +184,8 @@ S.SmsMenu = styled.div`
       text-transform: capitalize;
     }
 
-    &:first-child {
-      margin-bottom: 15px;
+    &:nth-child(2) {
+      margin-top: 15px;
     }
   }
 `;

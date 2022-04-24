@@ -54,6 +54,19 @@ export const logoutUser = createAsyncThunk(
   }
 );
 
+export const updateInfoUserAsync = createAsyncThunk(
+  AUTH_TYPES_PREFIX.updateInfoUser,
+  async (data) => {
+    try {
+      const res = await dataService.patch(`${API.user}/${data.id}`, data.param);
+      console.log(res.data);
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
 export const checkAuth = createAsyncThunk(
   AUTH_TYPES_PREFIX.checkAuthAction,
   async () => {
@@ -84,6 +97,11 @@ const initialState = user
 export const AuthSlice = createSlice({
   name: 'auth',
   initialState: initialState,
+  reducers: {
+    upDateUser: (state, action) => {
+      state.user = action.payload;
+    },
+  },
   extraReducers: {
     [registerUser.fulfilled]: (state, action) => {
       state.isLoading = false;
@@ -132,5 +150,6 @@ export const AuthSlice = createSlice({
     },
   },
 });
+export const { upDateUser } = AuthSlice.actions;
 
 export default AuthSlice.reducer;
