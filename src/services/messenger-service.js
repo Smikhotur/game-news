@@ -95,3 +95,32 @@ export const sendErrorMessageAsync = createAsyncThunk(
     }
   }
 );
+
+export const searchUserAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.searchUserPrefix,
+  async (data, { dispatch }) => {
+    try {
+      const res = await service.post(API.userSearch, data);
+      dispatch(setUsers(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);
+
+export const editMessageAsync = createAsyncThunk(
+  MESSENGER_TYPES_PREFIX.editMessagePrefix,
+  async (data, { dispatch }) => {
+    try {
+      const res = await service.patch(
+        `${API.upDateMessages}/${data.id}/${data.conversationId}`,
+        data.param
+      );
+      dispatch(setMesseges(res.data));
+      return res.data;
+    } catch (e) {
+      return e.response.data.message;
+    }
+  }
+);

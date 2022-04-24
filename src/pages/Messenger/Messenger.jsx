@@ -14,6 +14,7 @@ import {
   getUsersAsync,
   postConversationAsync,
 } from '../../services/messenger-service';
+// import { useRouteMatch } from 'react-router-dom';
 
 const Messenger = ({ socket }) => {
   const [currentChat, setCurrentChat] = useState(null);
@@ -24,6 +25,7 @@ const Messenger = ({ socket }) => {
   const conversation = useSelector(getConversationSelector);
   const messeges = useSelector(getMessegesSelector);
   const users = useSelector(getUsersSelector);
+  // const { params } = useRouteMatch();
   const dispatch = useDispatch();
 
   const findConversation = (id) => {
@@ -47,6 +49,7 @@ const Messenger = ({ socket }) => {
   useEffect(() => {
     if (currentChat) {
       (async () => {
+        console.log('currentChat._id', currentChat._id);
         await dispatch(getMessegesAsync(currentChat._id));
       })();
     }
@@ -63,6 +66,12 @@ const Messenger = ({ socket }) => {
       })();
     }
   }, [currentChat]);
+
+  // useEffect(() => {
+  //   if (params?.receiverId) {
+  //     findConversation(params?.receiverId);
+  //   }
+  // }, [conversation]);
 
   return (
     <S.Container>

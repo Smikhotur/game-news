@@ -6,13 +6,18 @@ import { S } from './styles';
 import emoji from '../../assets/images/emoji.png';
 import { HTTP_REQUEST_STATUS } from '../../CONST/http-request-status';
 import { useDispatch } from 'react-redux';
-import { postMessegesAsync } from '../../services/messenger-service';
+import {
+  deleteMessageAsync,
+  editMessageAsync,
+  postMessegesAsync,
+} from '../../services/messenger-service';
 import { setMesseges, setUnread } from '../../redux-slices/messenger-slice';
 import { setOnlineUsers } from '../../redux-slices/management-ui-slice';
 import useOnOutsideClick from '../../custom-hooks/useOnOutsideClick';
 import { MessageList } from './MessageList/MessageList';
 import { ROUTE_MESSENGER } from '../../CONST/list-local-routs/list-routes-public';
 import { useRouteMatch } from 'react-router-dom';
+import { cloneObject } from '../../helpers/getAuthUser';
 // import { io } from 'socket.io-client';
 
 export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
@@ -24,7 +29,10 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
   const { innerBorderRef } = useOnOutsideClick(() => setOpenEmoji(false));
   const scrollRef = useRef();
   const [arrivalMessage, setArrivalMessage] = useState(null);
+  const [editMessageSocet, setEditMessageSocet] = useState(null);
   const { path } = useRouteMatch();
+  const [edit, setEdit] = useState('');
+  const [removeMessageId, setRemoveMessageId] = useState(null);
 
   if (path.match(ROUTE_MESSENGER.path)) {
     useEffect(() => {
@@ -36,6 +44,17 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
           createdAt: Date.now(),
           _id: Date.now(),
         });
+      });
+
+      socket.current?.on('getEditMessage', (data) => {
+        setEditMessageSocet({
+          messageId: data.messageId,
+          text: data.text,
+        });
+      });
+
+      socket.current?.on('deleteMessage', (data) => {
+        setRemoveMessageId(data.messageId);
       });
 
       socket.current?.on('getUsers', (users) => {
@@ -60,6 +79,31 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
       dispatch(setOnlineUsers(users));
     });
   }, []);
+
+  useEffect(() => {
+    if (editMessageSocet) {
+      const clone = cloneObject(messeges);
+      clone.forEach((sms) => {
+        if (sms._id === editMessageSocet.messageId)
+          sms.text = editMessageSocet.text;
+      });
+
+      dispatch(setMesseges(clone));
+    }
+  }, [editMessageSocet]);
+
+  useEffect(() => {
+    if (removeMessageId) {
+      const newMessage = messeges.filter((sms) => {
+        return sms._id !== removeMessageId;
+      });
+
+      console.log(removeMessageId);
+      console.log(messeges);
+
+      dispatch(setMesseges(newMessage));
+    }
+  }, [removeMessageId]);
 
   const sendMessage = async () => {
     const message = {
@@ -89,7 +133,30 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    sendMessage();
+    edit ? editMessage() : sendMessage();
+  };
+
+  const editMessage = () => {
+    dispatch(
+      editMessageAsync({
+        conversationId: currentChat._id,
+        id: edit,
+        param: { text: text },
+      })
+    );
+
+    const receiverId = currentChat.members.find(
+      (member) => member !== currentUser.user.id
+    );
+
+    socket.current.emit('sendEditMessage', {
+      receiverId,
+      text,
+      messageId: edit,
+    });
+
+    setText('');
+    setEdit('');
   };
 
   const createMesseg = ({ target: { value } }) => {
@@ -102,13 +169,40 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
 
   const handleKeyUp = ({ key }) => {
     if (key === 'Enter') {
-      sendMessage();
+      edit ? editMessage() : sendMessage();
     }
   };
 
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: 'smooth' });
   }, [messeges]);
+
+  const updateMessage = (sms, id) => {
+    setText(sms);
+    setEdit(id);
+  };
+
+  const removeMessage = async (smsId) => {
+    const res = await dispatch(deleteMessageAsync(smsId));
+
+    if (res.meta.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
+      dispatch(
+        setMesseges(messeges.filter((message) => message._id !== smsId))
+      );
+    }
+
+    const receiverId = currentChat.members.find(
+      (member) => member !== currentUser.user.id
+    );
+
+    console.log(receiverId);
+    console.log(smsId);
+
+    socket.current.emit('deleteMessageSocket', {
+      messageId: smsId,
+      receiverId,
+    });
+  };
 
   return (
     <S.ChatBox>
@@ -120,6 +214,8 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
               messeges={messeges}
               avatar={avatar}
               scrollRef={scrollRef}
+              updateMessage={updateMessage}
+              removeMessage={removeMessage}
             />
           </S.ChatInner>
           <S.InnerTitle onSubmit={handleSubmit}>
@@ -139,7 +235,7 @@ export const ChatBox = ({ currentChat, messeges, avatar, socket }) => {
                 top: '-118px',
               }}
             />
-            <S.Button type="submmit">Send</S.Button>
+            <S.Button type="submmit">{edit ? 'Edit' : 'Send'}</S.Button>
           </S.InnerTitle>
         </>
       ) : (

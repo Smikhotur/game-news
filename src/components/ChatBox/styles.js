@@ -172,6 +172,7 @@ S.SmsMenu = styled.div`
   background-color: ${colors.blackOpaciry};
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   border-radius: 6px;
+  z-index: 15;
 
   > div {
     display: flex;
@@ -183,8 +184,8 @@ S.SmsMenu = styled.div`
       text-transform: capitalize;
     }
 
-    &:first-child {
-      margin-bottom: 15px;
+    &:nth-child(2) {
+      margin-top: 15px;
     }
   }
 `;

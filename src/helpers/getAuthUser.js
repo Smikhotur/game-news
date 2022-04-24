@@ -17,3 +17,7 @@ export const cloneLocalStorage = () => {
 export const updateLocalStorage = (clone) => {
   localStorage.setItem('user', JSON.stringify(clone));
 };
+
+export const cloneObject = (obj) => {
+  return JSON.parse(JSON.stringify(obj));
+};

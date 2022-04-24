@@ -19,6 +19,10 @@ class service {
     return client.put(api, data);
   }
 
+  patch(api, data) {
+    return client.patch(api, data);
+  }
+
   delete(api) {
     return client.delete(api);
   }

@@ -74,6 +74,7 @@ S.SearchPeople = styled.input`
 
 S.UsersList = styled.div`
   margin-top: 10px;
+  margin-right: 10px;
   overflow-y: auto;
   height: calc(100vh - 368px);
 
@@ -111,6 +112,7 @@ S.UsersItem = styled(Link)`
   transition: all 0.4s;
   border-radius: 5px;
   color: ${colors.redOpacity};
+  background-color: ${({ background }) => background};
 
   > img {
     margin-right: 15px;

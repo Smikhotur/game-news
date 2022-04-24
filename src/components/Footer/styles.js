@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import { devices } from '../../CONST/break-point';
 import { colors } from '../../CONST/colors';
@@ -51,13 +52,22 @@ S.AboutUSFooter = styled.div`
   width: 100%;
 `;
 
-S.LinkFooter = styled.div`
+S.LinkFooter = styled(Link)`
+  position: relative;
+  z-index: 5;
   -webkit-text-decoration: none;
   text-decoration: none;
-  color: #fff;
+  color: ${colors.white};
   font-size: 15px;
   font-weight: 400;
   text-transform: uppercase;
+  cursor: pointer;
+  border-bottom: 1px solid ${colors.transparent};
+
+  &:hover {
+    color: ${colors.orange};
+    border-bottom: 1px solid ${colors.orange};
+  }
 
   @media ${devices.mobileXL} {
     font-size: 10px;

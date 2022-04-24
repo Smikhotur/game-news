@@ -16,9 +16,9 @@ const Footer = () => {
           <S.ImageLeft src={leftImage} alt="" />
           <S.ImageRight src={rightImage} alt="" />
         </S.InnerImages>
-        <S.LinkFooter>{t('about_us')}</S.LinkFooter>
+        <S.LinkFooter to="/404">{t('about_us')}</S.LinkFooter>
         <S.LogoImg src={logo} alt="" />
-        <S.LinkFooter>{t('contacts')}</S.LinkFooter>
+        <S.LinkFooter to="/404">{t('contacts')}</S.LinkFooter>
         <S.CooryFooter>© 2021-2022</S.CooryFooter>
       </S.WrapperFooter>
     </>
