@@ -18,7 +18,7 @@ import { setUnread } from './redux-slices/messenger-slice';
 import { useHistory } from 'react-router-dom';
 
 function App() {
-  const socket = useRef(io('ws://localhost:5000'));
+  const socket = useRef(io('https://blooming-citadel-20389.herokuapp.com/'));
   const dispatch = useDispatch();
   const burgerMenuOpen = useSelector(getBurgerMenu);
   const currentUser = JSON.parse(localStorage.getItem('user'));
@@ -31,7 +31,7 @@ function App() {
     const token = getAuthUserStorage();
     if (token) {
       dispatch(checkAuth());
-      socket.current = io('ws://localhost:5000');
+      socket.current = io('https://blooming-citadel-20389.herokuapp.com/');
       socket.current.on('getUsers', (users) => {
         dispatch(setOnlineUsers(users));
       });
