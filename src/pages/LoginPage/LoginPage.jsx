@@ -29,7 +29,7 @@ const LoginPage = ({ socket }) => {
     const promise = await dispatch(loginUser(data));
 
     if (promise?.meta?.requestStatus === HTTP_REQUEST_STATUS.FULFILLED) {
-      socket.current = io('https://blooming-citadel-20389.herokuapp.com/');
+      socket.current = io('https://blooming-citadel-20389.herokuapp.com');
       socket.current.emit('addUser', promise?.payload.user.id);
     }
 
