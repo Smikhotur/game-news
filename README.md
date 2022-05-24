@@ -29,4 +29,4 @@ The following pages have been created:
 * Added Socket.IO for real-time SMS tracking, namely sending, editing, and deleting
 * On the details page for the best series of games added the ability to leave comments and ratings
 
-# Maybe I forgot to indicate something, so I advise you to follow the link above and take a look :)
+### Maybe I forgot to indicate something, so I advise you to follow the link above and take a look :)
