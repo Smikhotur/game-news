@@ -2,8 +2,6 @@
 
 - [DEMO LINK](https://gams-new-react.herokuapp.com/)
 
-The Game News program was designed by me namely the design, the frontend, and the backend parts. The program posted on Heroku
-
 ## The project was build using the following technologies:
 * Node.js / Express.js
 * MongoDB
@@ -31,4 +29,4 @@ The following pages have been created:
 * Added Socket.IO for real-time SMS tracking, namely sending, editing, and deleting
 * On the details page for the best series of games added the ability to leave comments and ratings
 
-## Maybe I forgot to indicate something, so I advise you to follow the link above and take a look :)
+# Maybe I forgot to indicate something, so I advise you to follow the link above and take a look :)
